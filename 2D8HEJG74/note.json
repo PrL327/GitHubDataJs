@@ -1,9 +1,9 @@
 {
   "paragraphs": [
     {
-      "text": "%md\n# TODO\n* import csv (done)\n* run statistics on csv\n* use bigquery\n    * get most used languages\n    * get least used",
+      "text": "%md\n# TODO\n* import csv (done)\n* run statistics on csv\n* use bigquery (done)\n* ????",
       "user": "anonymous",
-      "dateUpdated": "2018-03-14 22:14:20.283",
+      "dateUpdated": "2018-03-14 22:52:37.962",
       "config": {
         "colWidth": 12.0,
         "fontSize": 9.0,
@@ -27,7 +27,7 @@
         "msg": [
           {
             "type": "HTML",
-            "data": "\u003cdiv class\u003d\"markdown-body\"\u003e\n\u003ch1\u003eTODO\u003c/h1\u003e\n\u003cul\u003e\n  \u003cli\u003eimport csv (done)\u003c/li\u003e\n  \u003cli\u003erun statistics on csv\u003c/li\u003e\n  \u003cli\u003euse bigquery\n    \u003cul\u003e\n      \u003cli\u003eget most used languages\u003c/li\u003e\n      \u003cli\u003eget least used\u003c/li\u003e\n    \u003c/ul\u003e\n  \u003c/li\u003e\n\u003c/ul\u003e\n\u003c/div\u003e"
+            "data": "\u003cdiv class\u003d\"markdown-body\"\u003e\n\u003ch1\u003eTODO\u003c/h1\u003e\n\u003cul\u003e\n  \u003cli\u003eimport csv (done)\u003c/li\u003e\n  \u003cli\u003erun statistics on csv\u003c/li\u003e\n  \u003cli\u003euse bigquery (done)\u003c/li\u003e\n  \u003cli\u003e????\u003c/li\u003e\n\u003c/ul\u003e\n\u003c/div\u003e"
           }
         ]
       },
@@ -35,8 +35,8 @@
       "jobName": "paragraph_1521079979181_1378502408",
       "id": "20180314-221259_688702165",
       "dateCreated": "2018-03-14 22:12:59.181",
-      "dateStarted": "2018-03-14 22:14:20.284",
-      "dateFinished": "2018-03-14 22:14:20.388",
+      "dateStarted": "2018-03-14 22:52:37.962",
+      "dateFinished": "2018-03-14 22:52:39.965",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
@@ -68,18 +68,6 @@
             "data": "\n\n\n\n"
           }
         ]
-      },
-      "runtimeInfos": {
-        "jobUrl": {
-          "propertyName": "jobUrl",
-          "label": "SPARK JOB",
-          "tooltip": "View in Spark web UI",
-          "group": "spark",
-          "values": [
-            "http://192.168.1.152:4040/jobs/job?id\u003d17"
-          ],
-          "interpreterSettingId": "spark"
-        }
       },
       "apps": [],
       "jobName": "paragraph_1520883079271_-275456274",
@@ -148,18 +136,6 @@
           }
         ]
       },
-      "runtimeInfos": {
-        "jobUrl": {
-          "propertyName": "jobUrl",
-          "label": "SPARK JOB",
-          "tooltip": "View in Spark web UI",
-          "group": "spark",
-          "values": [
-            "http://192.168.1.152:4040/jobs/job?id\u003d18"
-          ],
-          "interpreterSettingId": "spark"
-        }
-      },
       "apps": [],
       "jobName": "paragraph_1521073845572_-1997165487",
       "id": "20180314-203045_698133167",
@@ -170,18 +146,400 @@
       "progressUpdateIntervalMs": 500
     },
     {
-      "text": "%sql\n",
+      "text": "%bigquery.sql\r\nSELECT\r\n  name,\r\n  COUNT(*) AS occurences\r\nFROM\r\n  `bigquery-public-data.github_repos.languages` AS l,\r\n  UNNEST(l.LANGUAGE)\r\nGROUP BY\r\n  name\r\nORDER BY\r\n  occurences DESC\r\n  limit 25",
       "user": "anonymous",
-      "dateUpdated": "2018-03-14 22:09:59.054",
+      "dateUpdated": "2018-03-14 22:48:11.100",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {
+          "0": {
+            "graph": {
+              "mode": "pieChart",
+              "height": 300.0,
+              "optionOpen": false,
+              "setting": {
+                "table": {
+                  "tableGridState": {
+                    "columns": [
+                      {
+                        "name": "repo_name",
+                        "visible": true,
+                        "width": "*",
+                        "sort": {},
+                        "filters": [
+                          {}
+                        ],
+                        "pinned": ""
+                      },
+                      {
+                        "name": "name",
+                        "visible": true,
+                        "width": "*",
+                        "sort": {},
+                        "filters": [
+                          {}
+                        ],
+                        "pinned": ""
+                      },
+                      {
+                        "name": "bytes",
+                        "visible": true,
+                        "width": "*",
+                        "sort": {},
+                        "filters": [
+                          {}
+                        ],
+                        "pinned": ""
+                      }
+                    ],
+                    "scrollFocus": {},
+                    "selection": [],
+                    "grouping": {
+                      "grouping": [],
+                      "aggregations": [],
+                      "rowExpandedStates": {}
+                    },
+                    "treeView": {},
+                    "pagination": {
+                      "paginationCurrentPage": 1.0,
+                      "paginationPageSize": 50.0
+                    }
+                  },
+                  "tableColumnTypeState": {
+                    "names": {
+                      "name": "string",
+                      "occurences": "string",
+                      "": "string"
+                    },
+                    "updated": false
+                  },
+                  "tableOptionSpecHash": "[{\"name\":\"useFilter\",\"valueType\":\"boolean\",\"defaultValue\":false,\"widget\":\"checkbox\",\"description\":\"Enable filter for columns\"},{\"name\":\"showPagination\",\"valueType\":\"boolean\",\"defaultValue\":false,\"widget\":\"checkbox\",\"description\":\"Enable pagination for better navigation\"},{\"name\":\"showAggregationFooter\",\"valueType\":\"boolean\",\"defaultValue\":false,\"widget\":\"checkbox\",\"description\":\"Enable a footer for displaying aggregated values\"}]",
+                  "tableOptionValue": {
+                    "useFilter": false,
+                    "showPagination": true,
+                    "showAggregationFooter": true
+                  },
+                  "updated": false,
+                  "initialized": false
+                },
+                "multiBarChart": {
+                  "rotate": {
+                    "degree": "-45"
+                  },
+                  "xLabelStatus": "default"
+                },
+                "stackedAreaChart": {
+                  "rotate": {
+                    "degree": "-45"
+                  },
+                  "xLabelStatus": "default"
+                },
+                "pieChart": {}
+              },
+              "commonSetting": {},
+              "keys": [
+                {
+                  "name": "name",
+                  "index": 0.0,
+                  "aggr": "sum"
+                }
+              ],
+              "groups": [],
+              "values": [
+                {
+                  "name": "occurences",
+                  "index": 1.0,
+                  "aggr": "sum"
+                }
+              ]
+            },
+            "helium": {}
+          }
+        },
+        "editorSetting": {
+          "language": "sql",
+          "editOnDblClick": false,
+          "completionKey": "TAB"
+        },
+        "editorMode": "ace/mode/sql"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TABLE",
+            "data": "name\toccurences\t\nJavaScript\t1123958\t\nCSS\t837019\t\nHTML\t797819\t\nShell\t652554\t\nPython\t559512\t\nRuby\t383544\t\nJava\t376565\t\nPHP\t349100\t\nC\t302075\t\nC++\t286837\t\nMakefile\t256446\t\nObjective-C\t174474\t\nC#\t135930\t\nPerl\t106133\t\nBatchfile\t101104\t\nGo\t91785\t\nApacheConf\t74388\t\nCoffeeScript\t71088\t\nCMake\t57224\t\nAssembly\t49904\t\nTypeScript\t43236\t\nSwift\t42657\t\nScala\t35203\t\nASP\t34812\t\nLua\t34518\t\n"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1521079799054_-1739442454",
+      "id": "20180314-220959_1695009132",
+      "dateCreated": "2018-03-14 22:09:59.054",
+      "dateStarted": "2018-03-14 22:47:54.268",
+      "dateFinished": "2018-03-14 22:47:57.384",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%bigquery.sql\nSELECT\n  name,\n  COUNT(*) AS occurences\nFROM\n  `bigquery-public-data.github_repos.languages` AS l,\n  UNNEST(l.LANGUAGE)\nGROUP BY\n  name\nORDER BY\n  occurences\n  limit 25",
+      "user": "anonymous",
+      "dateUpdated": "2018-03-14 22:49:52.416",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {
+          "0": {
+            "graph": {
+              "mode": "pieChart",
+              "height": 300.0,
+              "optionOpen": false,
+              "setting": {
+                "table": {
+                  "tableGridState": {},
+                  "tableColumnTypeState": {
+                    "names": {
+                      "name": "string",
+                      "occurences": "string",
+                      "": "string"
+                    },
+                    "updated": true
+                  },
+                  "tableOptionSpecHash": "[{\"name\":\"useFilter\",\"valueType\":\"boolean\",\"defaultValue\":false,\"widget\":\"checkbox\",\"description\":\"Enable filter for columns\"},{\"name\":\"showPagination\",\"valueType\":\"boolean\",\"defaultValue\":false,\"widget\":\"checkbox\",\"description\":\"Enable pagination for better navigation\"},{\"name\":\"showAggregationFooter\",\"valueType\":\"boolean\",\"defaultValue\":false,\"widget\":\"checkbox\",\"description\":\"Enable a footer for displaying aggregated values\"}]",
+                  "tableOptionValue": {
+                    "useFilter": false,
+                    "showPagination": false,
+                    "showAggregationFooter": false
+                  },
+                  "updated": false,
+                  "initialized": false
+                }
+              },
+              "commonSetting": {}
+            },
+            "helium": {}
+          }
+        },
+        "editorSetting": {
+          "language": "sql",
+          "editOnDblClick": false,
+          "completionKey": "TAB"
+        },
+        "editorMode": "ace/mode/sql"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TABLE",
+            "data": "name\toccurences\t\nRing\t1\t\nNetLinx+ERB\t3\t\nLFE\t4\t\nDataWeave\t4\t\nRUNOFF\t5\t\nOpal\t7\t\nBefunge\t7\t\nTI Program\t7\t\nOmgrofl\t8\t\nLoomScript\t9\t\nSolidity\t9\t\nRouge\t11\t\nCharity\t11\t\nGlyph\t11\t\nGenie\t12\t\nPogoScript\t12\t\nMTML\t12\t\nEQ\t13\t\nJolie\t13\t\nTea\t14\t\nECL\t15\t\nGrace\t15\t\nFilebench WML\t16\t\nREALbasic\t17\t\nShellSession\t17\t\n"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1521082148871_-2028982417",
+      "id": "20180314-224908_1317000163",
+      "dateCreated": "2018-03-14 22:49:08.871",
+      "dateStarted": "2018-03-14 22:49:42.983",
+      "dateFinished": "2018-03-14 22:49:46.625",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%bigquery.sql\nSELECT\n  name,\n  SUM(bytes) AS totalBytes\nFROM\n  `bigquery-public-data.github_repos.languages` AS l,\n  UNNEST(l.LANGUAGE)\nGROUP BY\n  name\nORDER BY\n  totalBytes DESC\nlimit 25",
+      "user": "anonymous",
+      "dateUpdated": "2018-03-14 22:50:18.001",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {
+          "0": {
+            "graph": {
+              "mode": "pieChart",
+              "height": 300.0,
+              "optionOpen": false,
+              "setting": {
+                "table": {
+                  "tableGridState": {},
+                  "tableColumnTypeState": {
+                    "names": {
+                      "name": "string",
+                      "totalBytes": "string",
+                      "": "string"
+                    },
+                    "updated": true
+                  },
+                  "tableOptionSpecHash": "[{\"name\":\"useFilter\",\"valueType\":\"boolean\",\"defaultValue\":false,\"widget\":\"checkbox\",\"description\":\"Enable filter for columns\"},{\"name\":\"showPagination\",\"valueType\":\"boolean\",\"defaultValue\":false,\"widget\":\"checkbox\",\"description\":\"Enable pagination for better navigation\"},{\"name\":\"showAggregationFooter\",\"valueType\":\"boolean\",\"defaultValue\":false,\"widget\":\"checkbox\",\"description\":\"Enable a footer for displaying aggregated values\"}]",
+                  "tableOptionValue": {
+                    "useFilter": false,
+                    "showPagination": false,
+                    "showAggregationFooter": false
+                  },
+                  "updated": false,
+                  "initialized": false
+                }
+              },
+              "commonSetting": {}
+            },
+            "helium": {}
+          }
+        },
+        "editorSetting": {
+          "language": "sql",
+          "editOnDblClick": false,
+          "completionKey": "TAB"
+        },
+        "editorMode": "ace/mode/sql"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TABLE",
+            "data": "name\ttotalBytes\t\nC\t6419976764463\t\nJavaScript\t1255708192332\t\nC++\t537485492018\t\nPHP\t523791028716\t\nHTML\t332097615786\t\nJava\t304036288071\t\nPython\t183777967157\t\nCSS\t156460325531\t\nC#\t146136761849\t\nAssembly\t139733713510\t\nGo\t66075708376\t\nObjective-C\t61266463202\t\nJupyter Notebook\t54771793186\t\nRuby\t36930948664\t\nTypeScript\t32492932765\t\nShell\t31601666961\t\nPerl\t29736859659\t\nMakefile\t25360664965\t\nVisual Basic\t14695789544\t\nWeb Ontology Language\t13077428222\t\nGroff\t10859181039\t\nOpenEdge ABL\t10045346752\t\nVHDL\t9936802146\t\nScala\t9731992620\t\nEmacs Lisp\t9217768686\t\n"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1521081430480_377487563",
+      "id": "20180314-223710_886127630",
+      "dateCreated": "2018-03-14 22:37:10.480",
+      "dateStarted": "2018-03-14 22:50:18.022",
+      "dateFinished": "2018-03-14 22:50:23.292",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%bigquery.sql\nSELECT\n  name,\n  SUM(bytes) AS totalBytes\nFROM\n  `bigquery-public-data.github_repos.languages` AS l,\n  UNNEST(l.LANGUAGE)\nGROUP BY\n  name\nORDER BY\n  totalBytes\nlimit 25",
+      "user": "anonymous",
+      "dateUpdated": "2018-03-14 22:52:03.548",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {
+          "0": {
+            "graph": {
+              "mode": "pieChart",
+              "height": 300.0,
+              "optionOpen": false,
+              "setting": {
+                "table": {
+                  "tableGridState": {},
+                  "tableColumnTypeState": {
+                    "names": {
+                      "name": "string",
+                      "totalBytes": "string",
+                      "": "string"
+                    },
+                    "updated": true
+                  },
+                  "tableOptionSpecHash": "[{\"name\":\"useFilter\",\"valueType\":\"boolean\",\"defaultValue\":false,\"widget\":\"checkbox\",\"description\":\"Enable filter for columns\"},{\"name\":\"showPagination\",\"valueType\":\"boolean\",\"defaultValue\":false,\"widget\":\"checkbox\",\"description\":\"Enable pagination for better navigation\"},{\"name\":\"showAggregationFooter\",\"valueType\":\"boolean\",\"defaultValue\":false,\"widget\":\"checkbox\",\"description\":\"Enable a footer for displaying aggregated values\"}]",
+                  "tableOptionValue": {
+                    "useFilter": false,
+                    "showPagination": false,
+                    "showAggregationFooter": false
+                  },
+                  "updated": false,
+                  "initialized": false
+                },
+                "multiBarChart": {
+                  "rotate": {
+                    "degree": "-45"
+                  },
+                  "xLabelStatus": "default"
+                },
+                "stackedAreaChart": {
+                  "rotate": {
+                    "degree": "-45"
+                  },
+                  "xLabelStatus": "default"
+                },
+                "lineChart": {
+                  "rotate": {
+                    "degree": "-45"
+                  },
+                  "xLabelStatus": "default"
+                }
+              },
+              "commonSetting": {},
+              "keys": [
+                {
+                  "name": "name",
+                  "index": 0.0,
+                  "aggr": "sum"
+                }
+              ],
+              "groups": [],
+              "values": [
+                {
+                  "name": "totalBytes",
+                  "index": 1.0,
+                  "aggr": "sum"
+                }
+              ]
+            },
+            "helium": {}
+          }
+        },
+        "editorSetting": {
+          "language": "sql",
+          "editOnDblClick": false,
+          "completionKey": "TAB"
+        },
+        "editorMode": "ace/mode/sql"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TABLE",
+            "data": "name\ttotalBytes\t\nDataWeave\t238\t\nOmgrofl\t2301\t\nNetLinx+ERB\t9031\t\nBefunge\t10120\t\nShellSession\t15416\t\nOpal\t33717\t\nRUNOFF\t42672\t\nTI Program\t58983\t\nMyghty\t85961\t\nMoocode\t116352\t\nGenie\t126883\t\nDogescript\t137247\t\nNearley\t204852\t\nLFE\t216024\t\nFilebench WML\t260901\t\nNextflow\t311313\t\nCirru\t314174\t\nGraphviz (DOT)\t371252\t\nPogoScript\t394920\t\nLoomScript\t607338\t\nFantom\t632197\t\nShen\t683664\t\nZimpl\t843231\t\nSolidity\t862233\t\nDCPU-16 ASM\t883518\t\n"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1521082191424_710896432",
+      "id": "20180314-224951_317206387",
+      "dateCreated": "2018-03-14 22:49:51.424",
+      "dateStarted": "2018-03-14 22:51:30.785",
+      "dateFinished": "2018-03-14 22:51:35.842",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%bigquery.sql\n",
+      "user": "anonymous",
+      "dateUpdated": "2018-03-14 22:51:30.736",
       "config": {},
       "settings": {
         "params": {},
         "forms": {}
       },
       "apps": [],
-      "jobName": "paragraph_1521079799054_-1739442454",
-      "id": "20180314-220959_1695009132",
-      "dateCreated": "2018-03-14 22:09:59.054",
+      "jobName": "paragraph_1521082290736_160007108",
+      "id": "20180314-225130_232090955",
+      "dateCreated": "2018-03-14 22:51:30.736",
       "status": "READY",
       "progressUpdateIntervalMs": 500
     }
@@ -192,6 +550,7 @@
   "noteForms": {},
   "angularObjects": {
     "md:shared_process": [],
+    "bigquery:shared_process": [],
     "spark:shared_process": []
   },
   "config": {
