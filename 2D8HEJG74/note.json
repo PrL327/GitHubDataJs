@@ -1,16 +1,187 @@
 {
   "paragraphs": [
     {
+      "text": "%md\n# TODO\n* import csv (done)\n* run statistics on csv\n* use bigquery\n    * get most used languages\n    * get least used",
       "user": "anonymous",
+      "dateUpdated": "2018-03-14 22:14:20.283",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "markdown",
+          "editOnDblClick": true,
+          "completionKey": "TAB"
+        },
+        "editorMode": "ace/mode/markdown",
+        "editorHide": true,
+        "tableHide": false
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "HTML",
+            "data": "\u003cdiv class\u003d\"markdown-body\"\u003e\n\u003ch1\u003eTODO\u003c/h1\u003e\n\u003cul\u003e\n  \u003cli\u003eimport csv (done)\u003c/li\u003e\n  \u003cli\u003erun statistics on csv\u003c/li\u003e\n  \u003cli\u003euse bigquery\n    \u003cul\u003e\n      \u003cli\u003eget most used languages\u003c/li\u003e\n      \u003cli\u003eget least used\u003c/li\u003e\n    \u003c/ul\u003e\n  \u003c/li\u003e\n\u003c/ul\u003e\n\u003c/div\u003e"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1521079979181_1378502408",
+      "id": "20180314-221259_688702165",
+      "dateCreated": "2018-03-14 22:12:59.181",
+      "dateStarted": "2018-03-14 22:14:20.284",
+      "dateFinished": "2018-03-14 22:14:20.388",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%r \ntest \u003c- read.csv(\"c:/users/danny/documents/github/githubdatajs/repos.csv\", header \u003d TRUE, nrows \u003d 1000)\ntest \u003d createDataFrame(test)\nregisterTempTable(test, \"test\")",
+      "user": "anonymous",
+      "dateUpdated": "2018-03-14 22:09:58.845",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "r",
+          "editOnDblClick": false,
+          "completionKey": "TAB"
+        },
+        "editorMode": "ace/mode/r"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "HTML",
+            "data": "\n\n\n\n"
+          }
+        ]
+      },
+      "runtimeInfos": {
+        "jobUrl": {
+          "propertyName": "jobUrl",
+          "label": "SPARK JOB",
+          "tooltip": "View in Spark web UI",
+          "group": "spark",
+          "values": [
+            "http://192.168.1.152:4040/jobs/job?id\u003d17"
+          ],
+          "interpreterSettingId": "spark"
+        }
+      },
+      "apps": [],
+      "jobName": "paragraph_1520883079271_-275456274",
+      "id": "20180312-153119_1506858329",
+      "dateCreated": "2018-03-12 15:31:19.271",
+      "dateStarted": "2018-03-14 22:09:58.855",
+      "dateFinished": "2018-03-14 22:09:59.034",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%sql\nselect *\nfrom test\nlimit 100",
+      "user": "anonymous",
+      "dateUpdated": "2018-03-14 22:10:00.773",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {
+          "0": {
+            "graph": {
+              "mode": "table",
+              "height": 300.0,
+              "optionOpen": false,
+              "setting": {
+                "table": {
+                  "tableGridState": {},
+                  "tableColumnTypeState": {
+                    "names": {
+                      "usernames": "string",
+                      "repos": "string"
+                    },
+                    "updated": false
+                  },
+                  "tableOptionSpecHash": "[{\"name\":\"useFilter\",\"valueType\":\"boolean\",\"defaultValue\":false,\"widget\":\"checkbox\",\"description\":\"Enable filter for columns\"},{\"name\":\"showPagination\",\"valueType\":\"boolean\",\"defaultValue\":false,\"widget\":\"checkbox\",\"description\":\"Enable pagination for better navigation\"},{\"name\":\"showAggregationFooter\",\"valueType\":\"boolean\",\"defaultValue\":false,\"widget\":\"checkbox\",\"description\":\"Enable a footer for displaying aggregated values\"}]",
+                  "tableOptionValue": {
+                    "useFilter": false,
+                    "showPagination": false,
+                    "showAggregationFooter": false
+                  },
+                  "updated": false,
+                  "initialized": false
+                }
+              },
+              "commonSetting": {}
+            }
+          }
+        },
+        "editorSetting": {
+          "language": "sql",
+          "editOnDblClick": false,
+          "completionKey": "TAB"
+        },
+        "editorMode": "ace/mode/sql"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TABLE",
+            "data": "usernames\trepos\nWaffle-Wrath\tCrackMapExec\nedfungus\tMusic-Server\ndwysocki\tASTP-601\nchenjian-rits\tHelloWorld\njaipandya\tSublimeTutor\nblackholll\tloonblog\ndandli\tdandli.github.io\nTypedScroll\tLCPD\nc4tto\tOSOrders\nhoharu\tlearnGitBranching\ndetlefreichl\trgw\nglisibor\telmah.1x\npjmcaleavey\tpjmcaleavey.github.io\nguzart\tbrowserify-typescriptifier\nhiplayer\tgiac\njulesy89\ttravelling-thief-problem\nbhivert\tphp-mvc\nimjerrybao\tbuild-web-application-with-golang\ndianlujitao\tandroid_kernel_huawei_c8813q\ncjrojas72\tFinalTestprep\ncomedianchameleon\tdlkfjwsldfowej\naeg-aeg\tpcpfans\ngeometrybase\thomebrew\nbluechipcurrency\tbluechip\nhesy007\tSXNews\nkerafill1116\tapollo-datastore-rest\ngerane\tgerane.github.io\napen-yong\tscm-manager\naustinkelleher\tDutyBoard\ncrayzeapp\tCrayzeAdsSDKiOS\nfredj\tflask-jsonify\ndiorahman\ttunai-whmcs\nfredDesign\tmalihu-custom-scrollbar-plugin\ngonzalodelgado\tyummy\njuan-cardelino\tmatlab_demos\nkraja1\tcgminer-master\nhurrinico\tserver-tools\nCode-Divine\tDunda\narchesproject\tarches\nblackpanther989\tArchiSteamFarm\nmanorius\tGdrawings\niancumihai\tiancumihai.github.io\njkowalski\tNLog\nbrendannee\tBikesy-Backend\ndarmaa\todoo\nelastacloud\tservicebusspout\ndutch2005\tdokan\nhhahh2011\tCH.Cms\ngreekins\tgreekins.github.io\nlambda\trust\nhatimeria\tHatimeriaBankBundle\nihart\tian-made-this-website\nfakechris\tWinStoneUdp\nbogovicj\thhmi-exp\nfbli41\tandroid_kernel_samsung_cs02\ngsgundam\tjQuery.resBg\njeanpierreb\tphp-snippets\nhansneil\tNodejs_MongoDB_AngularJS_Web\nkingklick\tkk-incredible-kernel\ndebugger22\tpotentialsite\nfillywong\tFWDraggableSwipePlayer\nd3trax\tasuswrt-merlin\nkshukost\treadme\nSpotLabsNET\tposhtools\nPineapple\tgoogleCardboardMoviePlayback\natm-ph\tdolibarr\nfidley\tabap2xlsx\nhappygow\tAppOfArt\nhuoxudong125\tangular\nintrop-software\tazure-quickstart-templates\nhotpodata\tBlockelganger\nhualishiri\ttools\ngaetansenn\tng-affix\nmohanvive\tsiddhi-2.x\nc650\tc650.github.io\nntvis\tcubian-update\nrarnu\tQEMU-s5l89xx-port\ntracyhenry\tucore-labs\nkentasaito\tmondai_data_example\nrenjithsraj\tlocation_django\npoulpito\tFlexget\ntheapache64\tets\niblancasa\tDAIPracticas\nrudygt\tNancy\nyyitsz\tmyandroidstudio\ntony-garcia\tSyntaxHighlighter-Tag-Mura-Plugin\nwangjun\tqqqun2mail\nplaytestcloud\truby-trello\nltearno\tmvn-run\ntsohil\telasticsearch\npat-patterson\twellesley-hoops\nmishira\tmishira\nvipulnsward\treact\nxuzhenguo\tAtlas-iOS\nphoenixburn119\tAdMobBanner\nnfqakademija\tdydis-turi-reiksme\nrosiel\tislandora_fits\nupamune\thatebo\nStardustGogeta\tstardustgogeta.github.io\nvpmedia\tvpmedia-as3\n"
+          }
+        ]
+      },
+      "runtimeInfos": {
+        "jobUrl": {
+          "propertyName": "jobUrl",
+          "label": "SPARK JOB",
+          "tooltip": "View in Spark web UI",
+          "group": "spark",
+          "values": [
+            "http://192.168.1.152:4040/jobs/job?id\u003d18"
+          ],
+          "interpreterSettingId": "spark"
+        }
+      },
+      "apps": [],
+      "jobName": "paragraph_1521073845572_-1997165487",
+      "id": "20180314-203045_698133167",
+      "dateCreated": "2018-03-14 20:30:45.572",
+      "dateStarted": "2018-03-14 22:09:59.068",
+      "dateFinished": "2018-03-14 22:10:00.254",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%sql\n",
+      "user": "anonymous",
+      "dateUpdated": "2018-03-14 22:09:59.054",
       "config": {},
       "settings": {
         "params": {},
         "forms": {}
       },
       "apps": [],
-      "jobName": "paragraph_1520883079271_-275456274",
-      "id": "20180312-153119_1506858329",
-      "dateCreated": "2018-03-12 15:31:19.271",
+      "jobName": "paragraph_1521079799054_-1739442454",
+      "id": "20180314-220959_1695009132",
+      "dateCreated": "2018-03-14 22:09:59.054",
       "status": "READY",
       "progressUpdateIntervalMs": 500
     }
@@ -19,9 +190,13 @@
   "id": "2D8HEJG74",
   "noteParams": {},
   "noteForms": {},
-  "angularObjects": {},
+  "angularObjects": {
+    "md:shared_process": [],
+    "spark:shared_process": []
+  },
   "config": {
-    "isZeppelinNotebookCronEnable": false
+    "isZeppelinNotebookCronEnable": false,
+    "isRevisionSupported": true
   },
   "info": {}
 }
