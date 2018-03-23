@@ -1,9 +1,9 @@
 {
   "paragraphs": [
     {
-      "text": "%md\n# 1. Describe project goals and why it is interesting \nWe plan to use this data to predict which languages are being used, what they’re being used for (commercial, fun, etc). This data is interesting is because github is one the most used git repositories and allows the public to see the trend of languages throughout the years and see what type of projects people create.",
+      "text": "%md\n# 1. Describe project goals and why it is interesting \nWe plan to use this data to predict which languages are being used, what they’re being used for (commercial, fun, etc). The data behind Github is fascinating because it is one the most used version control software out there and allows the public to see the trend of languages throughout the years and see what type of projects people create, and how they collaborate with one another.",
       "user": "anonymous",
-      "dateUpdated": "2018-03-23 09:10:45.157",
+      "dateUpdated": "2018-03-23 19:25:59.661",
       "config": {
         "colWidth": 12.0,
         "fontSize": 9.0,
@@ -27,7 +27,7 @@
         "msg": [
           {
             "type": "HTML",
-            "data": "\u003cdiv class\u003d\"markdown-body\"\u003e\n\u003ch1\u003e1. Describe project goals and why it is interesting\u003c/h1\u003e\n\u003cp\u003eWe plan to use this data to predict which languages are being used, what they’re being used for (commercial, fun, etc). This data is interesting is because github is one the most used git repositories and allows the public to see the trend of languages throughout the years and see what type of projects people create.\u003c/p\u003e\n\u003c/div\u003e"
+            "data": "\u003cdiv class\u003d\"markdown-body\"\u003e\n\u003ch1\u003e1. Describe project goals and why it is interesting\u003c/h1\u003e\n\u003cp\u003eWe plan to use this data to predict which languages are being used, what they’re being used for (commercial, fun, etc). The data behind Github is fascinating because it is one the most used version control software out there and allows the public to see the trend of languages throughout the years and see what type of projects people create, and how they collaborate with one another.\u003c/p\u003e\n\u003c/div\u003e"
           }
         ]
       },
@@ -35,15 +35,15 @@
       "jobName": "paragraph_1521810620834_186615656",
       "id": "20180323-091020_783048043",
       "dateCreated": "2018-03-23 09:10:20.834",
-      "dateStarted": "2018-03-23 09:10:45.319",
-      "dateFinished": "2018-03-23 09:10:50.912",
+      "dateStarted": "2018-03-23 19:25:59.664",
+      "dateFinished": "2018-03-23 19:26:04.574",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
     {
-      "text": "%md\n# 2. Describe data collection/source of data, data format, data preprocessing\nThis dataset gives us info on what languages are used, its files (including their contents) and their size along with info on commits. We will use a combination of the data from bigquery along with using Github’s official api using javascript. Bigquery’s data is listed as tables, while the api will give us info in the form of a json file. With bigquery, we have to eliminate rows that have a date before the creation of github (which is about 0.04% (10 million) of the total rows. With the api, we eliminate some of the redundant information such as owner of repo (since unless you’re searching, you get the repo based off the username).",
+      "text": "%md\n# 2. Describe data collection/source of data, data format, data preprocessing\nThis dataset gives us info on what languages are used, its files (including their contents) and their size along with info on commits. We will use a combination of the data from bigquery along with using Github’s official api using javascript. Bigquery’s data is listed as tables, while the api will give us info in the form of an API response as json file. With bigquery, we have to eliminate rows that have a date before the creation of github (which is about 0.04% (10 million) which is most likely an error from importing data to bigQuery) of the total rows. With the api, we eliminate some of the redundant information such as owner of repo (since unless you’re searching, you get the repo based off the username).\n\nOne of our data collection source was Octokit’s rest.js, a JavaScript based API scraper tool adopted by the GitHub team(https://github.com/octokit/rest.js). From there we could access a large amount github data arranging from, user info, repository details, gists, issues, and pull requests from 24 million users.This is an example of a “query” using rest.js: [INSERT CODE SNIPPET]. Right now since we can only evaluate data that is public like public organizations and public repos, we had to put a safeguard in which we return 0, which in the end we filter out. We also have to worry about hitting the query limit for the api which is 1000 queries a hour.",
       "user": "anonymous",
-      "dateUpdated": "2018-03-23 09:11:15.336",
+      "dateUpdated": "2018-03-23 19:26:25.239",
       "config": {
         "colWidth": 12.0,
         "fontSize": 9.0,
@@ -67,7 +67,7 @@
         "msg": [
           {
             "type": "HTML",
-            "data": "\u003cdiv class\u003d\"markdown-body\"\u003e\n\u003ch1\u003e2. Describe data collection/source of data, data format, data preprocessing\u003c/h1\u003e\n\u003cp\u003eThis dataset gives us info on what languages are used, its files (including their contents) and their size along with info on commits. We will use a combination of the data from bigquery along with using Github’s official api using javascript. Bigquery’s data is listed as tables, while the api will give us info in the form of a json file. With bigquery, we have to eliminate rows that have a date before the creation of github (which is about 0.04% (10 million) of the total rows. With the api, we eliminate some of the redundant information such as owner of repo (since unless you’re searching, you get the repo based off the username).\u003c/p\u003e\n\u003c/div\u003e"
+            "data": "\u003cdiv class\u003d\"markdown-body\"\u003e\n\u003ch1\u003e2. Describe data collection/source of data, data format, data preprocessing\u003c/h1\u003e\n\u003cp\u003eThis dataset gives us info on what languages are used, its files (including their contents) and their size along with info on commits. We will use a combination of the data from bigquery along with using Github’s official api using javascript. Bigquery’s data is listed as tables, while the api will give us info in the form of an API response as json file. With bigquery, we have to eliminate rows that have a date before the creation of github (which is about 0.04% (10 million) which is most likely an error from importing data to bigQuery) of the total rows. With the api, we eliminate some of the redundant information such as owner of repo (since unless you’re searching, you get the repo based off the username).\u003c/p\u003e\n\u003cp\u003eOne of our data collection source was Octokit’s rest.js, a JavaScript based API scraper tool adopted by the GitHub team(\u003ca href\u003d\"https://github.com/octokit/rest.js)\"\u003ehttps://github.com/octokit/rest.js)\u003c/a\u003e. From there we could access a large amount github data arranging from, user info, repository details, gists, issues, and pull requests from 24 million users.This is an example of a “query” using rest.js: [INSERT CODE SNIPPET]. Right now since we can only evaluate data that is public like public organizations and public repos, we had to put a safeguard in which we return 0, which in the end we filter out. We also have to worry about hitting the query limit for the api which is 1000 queries a hour.\u003c/p\u003e\n\u003c/div\u003e"
           }
         ]
       },
@@ -75,8 +75,8 @@
       "jobName": "paragraph_1521810653358_1975482586",
       "id": "20180323-091053_248617491",
       "dateCreated": "2018-03-23 09:10:53.358",
-      "dateStarted": "2018-03-23 09:11:15.336",
-      "dateFinished": "2018-03-23 09:11:15.456",
+      "dateStarted": "2018-03-23 19:26:25.253",
+      "dateFinished": "2018-03-23 19:26:25.354",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
@@ -121,9 +121,9 @@
       "progressUpdateIntervalMs": 500
     },
     {
-      "text": "%md\n# 4. Describe possible applications of this data, Including your ideas for the next phase",
+      "text": "%md\n# 4. Describe possible applications of this data, Including your ideas for the next phase\nAn application for this data is seeing what type of programs use more storage than others allowing a system administrator to give certain users more storage based on their favorite language. One interesting application will be seeing which libraries are commonly used and can go a step further and seeing what are the top 10 libraries for each language for each year. We will be using this data to predict which languages will be expected to be used the most in 2018 and 2019. Since we also get information like commits, we can use this data to see average commits, average time between commits, and see average lifetime of a repository. We are also able to see contents of every file in any public repository, we can use the contents to teach a machine learning algorithm to tell the difference between python and javascript or between java and c++, etc.\n",
       "user": "anonymous",
-      "dateUpdated": "2018-03-23 09:11:56.646",
+      "dateUpdated": "2018-03-23 19:26:49.262",
       "config": {
         "colWidth": 12.0,
         "fontSize": 9.0,
@@ -147,7 +147,7 @@
         "msg": [
           {
             "type": "HTML",
-            "data": "\u003cdiv class\u003d\"markdown-body\"\u003e\n\u003ch1\u003e4. Describe possible applications of this data, Including your ideas for the next phase\u003c/h1\u003e\n\u003c/div\u003e"
+            "data": "\u003cdiv class\u003d\"markdown-body\"\u003e\n\u003ch1\u003e4. Describe possible applications of this data, Including your ideas for the next phase\u003c/h1\u003e\n\u003cp\u003eAn application for this data is seeing what type of programs use more storage than others allowing a system administrator to give certain users more storage based on their favorite language. One interesting application will be seeing which libraries are commonly used and can go a step further and seeing what are the top 10 libraries for each language for each year. We will be using this data to predict which languages will be expected to be used the most in 2018 and 2019. Since we also get information like commits, we can use this data to see average commits, average time between commits, and see average lifetime of a repository. We are also able to see contents of every file in any public repository, we can use the contents to teach a machine learning algorithm to tell the difference between python and javascript or between java and c++, etc.\u003c/p\u003e\n\u003c/div\u003e"
           }
         ]
       },
@@ -155,8 +155,8 @@
       "jobName": "paragraph_1521810703552_-1661723536",
       "id": "20180323-091143_1431321800",
       "dateCreated": "2018-03-23 09:11:43.552",
-      "dateStarted": "2018-03-23 09:11:56.646",
-      "dateFinished": "2018-03-23 09:11:56.733",
+      "dateStarted": "2018-03-23 19:26:49.270",
+      "dateFinished": "2018-03-23 19:26:49.348",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
