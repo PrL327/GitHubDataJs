@@ -41,6 +41,166 @@
       "progressUpdateIntervalMs": 500
     },
     {
+      "text": "%md\n# 1. Describe project goals and why it is interesting \nWe plan to use this data to predict which languages are being used, what they’re being used for (commercial, fun, etc). This data is interesting is because github is one the most used git repositories and allows the public to see the trend of languages throughout the years and see what type of projects people create.",
+      "user": "anonymous",
+      "dateUpdated": "2018-03-23 09:10:45.157",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "markdown",
+          "editOnDblClick": true,
+          "completionKey": "TAB"
+        },
+        "editorMode": "ace/mode/markdown",
+        "editorHide": true,
+        "tableHide": false
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "HTML",
+            "data": "\u003cdiv class\u003d\"markdown-body\"\u003e\n\u003ch1\u003e1. Describe project goals and why it is interesting\u003c/h1\u003e\n\u003cp\u003eWe plan to use this data to predict which languages are being used, what they’re being used for (commercial, fun, etc). This data is interesting is because github is one the most used git repositories and allows the public to see the trend of languages throughout the years and see what type of projects people create.\u003c/p\u003e\n\u003c/div\u003e"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1521810620834_186615656",
+      "id": "20180323-091020_783048043",
+      "dateCreated": "2018-03-23 09:10:20.834",
+      "dateStarted": "2018-03-23 09:10:45.319",
+      "dateFinished": "2018-03-23 09:10:50.912",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%md\n# 2. Describe data collection/source of data, data format, data preprocessing\nThis dataset gives us info on what languages are used, its files (including their contents) and their size along with info on commits. We will use a combination of the data from bigquery along with using Github’s official api using javascript. Bigquery’s data is listed as tables, while the api will give us info in the form of a json file. With bigquery, we have to eliminate rows that have a date before the creation of github (which is about 0.04% (10 million) of the total rows. With the api, we eliminate some of the redundant information such as owner of repo (since unless you’re searching, you get the repo based off the username).",
+      "user": "anonymous",
+      "dateUpdated": "2018-03-23 09:11:15.336",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "markdown",
+          "editOnDblClick": true,
+          "completionKey": "TAB"
+        },
+        "editorMode": "ace/mode/markdown",
+        "editorHide": true,
+        "tableHide": false
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "HTML",
+            "data": "\u003cdiv class\u003d\"markdown-body\"\u003e\n\u003ch1\u003e2. Describe data collection/source of data, data format, data preprocessing\u003c/h1\u003e\n\u003cp\u003eThis dataset gives us info on what languages are used, its files (including their contents) and their size along with info on commits. We will use a combination of the data from bigquery along with using Github’s official api using javascript. Bigquery’s data is listed as tables, while the api will give us info in the form of a json file. With bigquery, we have to eliminate rows that have a date before the creation of github (which is about 0.04% (10 million) of the total rows. With the api, we eliminate some of the redundant information such as owner of repo (since unless you’re searching, you get the repo based off the username).\u003c/p\u003e\n\u003c/div\u003e"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1521810653358_1975482586",
+      "id": "20180323-091053_248617491",
+      "dateCreated": "2018-03-23 09:10:53.358",
+      "dateStarted": "2018-03-23 09:11:15.336",
+      "dateFinished": "2018-03-23 09:11:15.456",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%md\n# 3. Describe contents of data in detail (write code to analyse and visualize it) \n",
+      "user": "anonymous",
+      "dateUpdated": "2018-03-23 09:11:30.621",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "markdown",
+          "editOnDblClick": true,
+          "completionKey": "TAB"
+        },
+        "editorMode": "ace/mode/markdown",
+        "editorHide": true,
+        "tableHide": false
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "HTML",
+            "data": "\u003cdiv class\u003d\"markdown-body\"\u003e\n\u003ch1\u003e3. Describe contents of data in detail (write code to analyse and visualize it)\u003c/h1\u003e\n\u003c/div\u003e"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1521810678845_-168213685",
+      "id": "20180323-091118_797267861",
+      "dateCreated": "2018-03-23 09:11:18.845",
+      "dateStarted": "2018-03-23 09:11:30.620",
+      "dateFinished": "2018-03-23 09:11:30.640",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%md\n# 4. Describe possible applications of this data, Including your ideas for the next phase",
+      "user": "anonymous",
+      "dateUpdated": "2018-03-23 09:11:56.646",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "markdown",
+          "editOnDblClick": true,
+          "completionKey": "TAB"
+        },
+        "editorMode": "ace/mode/markdown",
+        "editorHide": true,
+        "tableHide": false
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "HTML",
+            "data": "\u003cdiv class\u003d\"markdown-body\"\u003e\n\u003ch1\u003e4. Describe possible applications of this data, Including your ideas for the next phase\u003c/h1\u003e\n\u003c/div\u003e"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1521810703552_-1661723536",
+      "id": "20180323-091143_1431321800",
+      "dateCreated": "2018-03-23 09:11:43.552",
+      "dateStarted": "2018-03-23 09:11:56.646",
+      "dateFinished": "2018-03-23 09:11:56.733",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
       "text": "%r \ntest \u003c- read.csv(\"c:/users/danny/documents/github/githubdatajs/repos.csv\", header \u003d TRUE, nrows \u003d 1000)\ntest \u003d createDataFrame(test)\nregisterTempTable(test, \"test\")",
       "user": "anonymous",
       "dateUpdated": "2018-03-14 22:09:58.845",
@@ -550,7 +710,6 @@
   "noteForms": {},
   "angularObjects": {
     "md:shared_process": [],
-    "bigquery:shared_process": [],
     "spark:shared_process": []
   },
   "config": {
