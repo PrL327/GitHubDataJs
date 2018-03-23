@@ -9,6 +9,6 @@
   "author": "Peter Laskai and Daniel Fraser",
   "license": "ISC",
   "dependencies": {
-    "@octokit/rest": "^15.1.9"
+    "@octokit/rest": "^15.2.5"
   }
 }
