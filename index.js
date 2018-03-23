@@ -8,12 +8,20 @@ octokit.authenticate({
 });
 
 // Compare: https://developer.github.com/v3/repos/#list-organization-repositories
-octokit.repos.getLanguages({
+octokit.repos.getRepos({
   owner: 'prl327',
-  repo: 'LetsPlayCraps'
+  repo: 'JavaFXMusicLibrary'
 }).then(({data}) => {
   console.log(data);
 });
+
+Need to Loop through it
+octokit.repos.getCommits({
+  owner: 'prl327',
+  repo: 'ravenIM'
+}).then(({data}) => {
+  console.log(data);
+})
 
 
 
@@ -40,10 +48,18 @@ async function getRepos(owner) {
     return result.data.length
 }
 
+async function getReposNames(owner) {
+
+    result = await octokit.repos.getForUser({
+        username: owner,
+        per_page: 100});
+    return result;
+}
+
 //use user names for info
 async function test() {
     total = 0;
-    totUsers = 40;
+    totUsers = 200 ;
     userLst = await getUsers(totUsers);
     for (i = 0; i < userLst.length; i++) {
         totalRepos = await getRepos(userLst[i]);
@@ -52,4 +68,20 @@ async function test() {
     console.log(total/totUsers)
 }
 
-test();
+async function getCommitsPerRepo(owner){
+  result = await ocktokit.repos.getCommits({
+    username: owner,
+    repo: getReposNames(owner)
+  });
+
+  return result;
+}
+
+async function test2() {
+  userLst = await getUsers(totUsers);
+  for (i = 0; i < userLst.length; i++) {
+      commits = await getCommitsPerRepo(userLst[i]);
+
+  }
+}
+// Get Contributers
