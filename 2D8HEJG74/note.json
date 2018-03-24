@@ -41,9 +41,9 @@
       "progressUpdateIntervalMs": 500
     },
     {
-      "text": "%md\n# 2. Describe data collection/source of data, data format, data preprocessing\nThis dataset gives us info on what languages are used, its files (including their contents) and their size along with info on commits. We will use a combination of the data from bigquery along with using Github’s official api using javascript. Bigquery’s data is listed as tables, while the api will give us info in the form of an API response as json file. With bigquery, we have to eliminate rows that have a date before the creation of github (which is about 0.04% (10 million) which is most likely an error from importing data to bigQuery) of the total rows. With the api, we eliminate some of the redundant information such as owner of repo (since unless you’re searching, you get the repo based off the username).\n\nOne of our data collection source was Octokit’s [rest.js](https://github.com/octokit/rest.js), a JavaScript based API scraper tool adopted by the GitHub team. From there we could access a large amount github data arranging from, user info, repository details, gists, issues, and pull requests from 24 million users.This is an example of a “query” using rest.js:\n```\n//This specific function gets all the info of JavaFXMusicLibrary repository from user PrL327\noctokit.repos.get({\n  owner: \u0027prl327\u0027,\n  repo: \u0027JavaFXMusicLibrary\u0027\n}).then(({data}) \u003d\u003e {\n  console.log(data);\n}); \n```\n Right now since we can only evaluate data that is public like public organizations and public repos, we had to put a safeguard in which we return 0, which in the end we filter out. We also have to worry about hitting the query limit for the api which is 1000 queries a hour.",
+      "text": "%md\n# 2. Describe data collection/source of data, data format, data preprocessing\nThis dataset gives us info on what languages are used, its files (including their contents) and their size along with info on commits. We will use a combination of the data from bigquery along with using Github’s official api using javascript. Bigquery’s data is listed as tables, while the api will give us info in the form of an API response as json file. With bigquery, we have to eliminate rows that have a date before the creation of github (which is about 0.04% (10 million) which is most likely an error from importing data to bigQuery) of the total rows. With the api, we eliminate some of the redundant information such as owner of repo (since unless you’re searching, you get the repo based off the username).\n\nOne of our data collection source was Octokit’s [rest.js](https://github.com/octokit/rest.js), a JavaScript based API scraper tool adopted by the GitHub team. From there we could access a large amount github data arranging from, user info, repository details, gists, issues, and pull requests from 24 million users.This is an example of a “query” using rest.js:\n```\n//This specific function gets all the info of JavaFXMusicLibrary repository from user PrL327\noctokit.repos.get({\n  owner: \u0027prl327\u0027,\n  repo: \u0027JavaFXMusicLibrary\u0027\n}).then(({data}) \u003d\u003e {\n  console.log(data);\n}); \n```\n Right now since we can only evaluate data that is public like public organizations and public repos, we had to put a safeguard in which we return 0, which in the end we filter out. We also have to worry about hitting the query limit for the api which is 1000 queries a hour. We actually combined the use of BigQuery and Rest.js in one example. We had a csv file which contained two columns for username and repository, with about 10,000 rows. to easily process that csv file through our query we needed to convert it to a JSON for easy parsing. For this we used csv a node library and it\u0027s resepective functions to do the conversion, it produce an object like such:\n ```\n {\n     \"User\": \"prl327\",\n     \"Repository\": \"JavaFXMusicLibrary\"\n }\n ```\n And so on for 10,000 more user/repo combinations.",
       "user": "anonymous",
-      "dateUpdated": "2018-03-24 16:15:09.534",
+      "dateUpdated": "2018-03-24 19:22:28.218",
       "config": {
         "colWidth": 12.0,
         "fontSize": 9.0,
@@ -67,7 +67,7 @@
         "msg": [
           {
             "type": "HTML",
-            "data": "\u003cdiv class\u003d\"markdown-body\"\u003e\n\u003ch1\u003e2. Describe data collection/source of data, data format, data preprocessing\u003c/h1\u003e\n\u003cp\u003eThis dataset gives us info on what languages are used, its files (including their contents) and their size along with info on commits. We will use a combination of the data from bigquery along with using Github’s official api using javascript. Bigquery’s data is listed as tables, while the api will give us info in the form of an API response as json file. With bigquery, we have to eliminate rows that have a date before the creation of github (which is about 0.04% (10 million) which is most likely an error from importing data to bigQuery) of the total rows. With the api, we eliminate some of the redundant information such as owner of repo (since unless you’re searching, you get the repo based off the username).\u003c/p\u003e\n\u003cp\u003eOne of our data collection source was Octokit’s \u003ca href\u003d\"https://github.com/octokit/rest.js\"\u003erest.js\u003c/a\u003e, a JavaScript based API scraper tool adopted by the GitHub team. From there we could access a large amount github data arranging from, user info, repository details, gists, issues, and pull requests from 24 million users.This is an example of a “query” using rest.js:\u003c/p\u003e\n\u003cpre\u003e\u003ccode\u003e//This specific function gets all the info of JavaFXMusicLibrary repository from user PrL327\noctokit.repos.get({\n  owner: \u0026#39;prl327\u0026#39;,\n  repo: \u0026#39;JavaFXMusicLibrary\u0026#39;\n}).then(({data}) \u003d\u0026gt; {\n  console.log(data);\n}); \n\u003c/code\u003e\u003c/pre\u003e\n\u003cp\u003eRight now since we can only evaluate data that is public like public organizations and public repos, we had to put a safeguard in which we return 0, which in the end we filter out. We also have to worry about hitting the query limit for the api which is 1000 queries a hour.\u003c/p\u003e\n\u003c/div\u003e"
+            "data": "\u003cdiv class\u003d\"markdown-body\"\u003e\n\u003ch1\u003e2. Describe data collection/source of data, data format, data preprocessing\u003c/h1\u003e\n\u003cp\u003eThis dataset gives us info on what languages are used, its files (including their contents) and their size along with info on commits. We will use a combination of the data from bigquery along with using Github’s official api using javascript. Bigquery’s data is listed as tables, while the api will give us info in the form of an API response as json file. With bigquery, we have to eliminate rows that have a date before the creation of github (which is about 0.04% (10 million) which is most likely an error from importing data to bigQuery) of the total rows. With the api, we eliminate some of the redundant information such as owner of repo (since unless you’re searching, you get the repo based off the username).\u003c/p\u003e\n\u003cp\u003eOne of our data collection source was Octokit’s \u003ca href\u003d\"https://github.com/octokit/rest.js\"\u003erest.js\u003c/a\u003e, a JavaScript based API scraper tool adopted by the GitHub team. From there we could access a large amount github data arranging from, user info, repository details, gists, issues, and pull requests from 24 million users.This is an example of a “query” using rest.js:\u003c/p\u003e\n\u003cpre\u003e\u003ccode\u003e//This specific function gets all the info of JavaFXMusicLibrary repository from user PrL327\noctokit.repos.get({\n  owner: \u0026#39;prl327\u0026#39;,\n  repo: \u0026#39;JavaFXMusicLibrary\u0026#39;\n}).then(({data}) \u003d\u0026gt; {\n  console.log(data);\n}); \n\u003c/code\u003e\u003c/pre\u003e\n\u003cp\u003eRight now since we can only evaluate data that is public like public organizations and public repos, we had to put a safeguard in which we return 0, which in the end we filter out. We also have to worry about hitting the query limit for the api which is 1000 queries a hour. We actually combined the use of BigQuery and Rest.js in one example. We had a csv file which contained two columns for username and repository, with about 10,000 rows. to easily process that csv file through our query we needed to convert it to a JSON for easy parsing. For this we used csv a node library and it\u0026rsquo;s resepective functions to do the conversion, it produce an object like such:\u003cbr/\u003e \u003ccode\u003e\n {\n     \u0026quot;User\u0026quot;: \u0026quot;prl327\u0026quot;,\n     \u0026quot;Repository\u0026quot;: \u0026quot;JavaFXMusicLibrary\u0026quot;\n }\n\u003c/code\u003e\u003cbr/\u003e And so on for 10,000 more user/repo combinations.\u003c/p\u003e\n\u003c/div\u003e"
           }
         ]
       },
@@ -75,8 +75,8 @@
       "jobName": "paragraph_1521810653358_1975482586",
       "id": "20180323-091053_248617491",
       "dateCreated": "2018-03-23 09:10:53.358",
-      "dateStarted": "2018-03-24 16:15:09.542",
-      "dateFinished": "2018-03-24 16:15:11.005",
+      "dateStarted": "2018-03-24 19:22:28.238",
+      "dateFinished": "2018-03-24 19:22:28.293",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
@@ -148,18 +148,6 @@
             "data": "\n\n\n\n"
           }
         ]
-      },
-      "runtimeInfos": {
-        "jobUrl": {
-          "propertyName": "jobUrl",
-          "label": "SPARK JOB",
-          "tooltip": "View in Spark web UI",
-          "group": "spark",
-          "values": [
-            "http://192.168.1.152:4040/jobs/job?id\u003d2"
-          ],
-          "interpreterSettingId": "spark"
-        }
       },
       "apps": [],
       "jobName": "paragraph_1520883079271_-275456274",
@@ -251,7 +239,7 @@
     {
       "text": "%bigquery.sql\r\nSELECT\r\n  name,\r\n  COUNT(*) AS occurences\r\nFROM\r\n  `bigquery-public-data.github_repos.languages` AS l,\r\n  UNNEST(l.LANGUAGE)\r\nGROUP BY\r\n  name\r\nORDER BY\r\n  occurences DESC\r\n  limit 15",
       "user": "anonymous",
-      "dateUpdated": "2018-03-24 18:48:53.933",
+      "dateUpdated": "2018-03-24 19:10:01.534",
       "config": {
         "colWidth": 12.0,
         "fontSize": 9.0,
@@ -2167,7 +2155,7 @@
     {
       "text": "%bigquery.sql\nSELECT\n  name,\n  COUNT(*) AS occurences\nFROM\n  `bigquery-public-data.github_repos.languages` AS l,\n  UNNEST(l.LANGUAGE)\nGROUP BY\n  name\nORDER BY\n  occurences\n  limit 15",
       "user": "anonymous",
-      "dateUpdated": "2018-03-24 18:48:55.952",
+      "dateUpdated": "2018-03-24 19:10:01.745",
       "config": {
         "colWidth": 12.0,
         "fontSize": 9.0,
@@ -2187,7 +2175,7 @@
                       "occurences": "string",
                       "": "string"
                     },
-                    "updated": true
+                    "updated": false
                   },
                   "tableOptionSpecHash": "[{\"name\":\"useFilter\",\"valueType\":\"boolean\",\"defaultValue\":false,\"widget\":\"checkbox\",\"description\":\"Enable filter for columns\"},{\"name\":\"showPagination\",\"valueType\":\"boolean\",\"defaultValue\":false,\"widget\":\"checkbox\",\"description\":\"Enable pagination for better navigation\"},{\"name\":\"showAggregationFooter\",\"valueType\":\"boolean\",\"defaultValue\":false,\"widget\":\"checkbox\",\"description\":\"Enable a footer for displaying aggregated values\"}]",
                   "tableOptionValue": {
@@ -4119,7 +4107,7 @@
     {
       "text": "%bigquery.sql\nSELECT\n  name,\n  SUM(bytes) AS totalBytes\nFROM\n  `bigquery-public-data.github_repos.languages` AS l,\n  UNNEST(l.LANGUAGE)\nGROUP BY\n  name\nORDER BY\n  totalBytes\nlimit 15",
       "user": "anonymous",
-      "dateUpdated": "2018-03-24 18:52:31.064",
+      "dateUpdated": "2018-03-24 19:10:02.525",
       "config": {
         "colWidth": 12.0,
         "fontSize": 9.0,
@@ -4139,7 +4127,7 @@
                       "totalBytes": "string",
                       "": "string"
                     },
-                    "updated": true
+                    "updated": false
                   },
                   "tableOptionSpecHash": "[{\"name\":\"useFilter\",\"valueType\":\"boolean\",\"defaultValue\":false,\"widget\":\"checkbox\",\"description\":\"Enable filter for columns\"},{\"name\":\"showPagination\",\"valueType\":\"boolean\",\"defaultValue\":false,\"widget\":\"checkbox\",\"description\":\"Enable pagination for better navigation\"},{\"name\":\"showAggregationFooter\",\"valueType\":\"boolean\",\"defaultValue\":false,\"widget\":\"checkbox\",\"description\":\"Enable a footer for displaying aggregated values\"}]",
                   "tableOptionValue": {

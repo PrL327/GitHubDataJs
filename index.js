@@ -1,4 +1,5 @@
 const octokit = require('@octokit/rest')();
+var fs = require("fs");
 
 //used to increase number of queries an hour
 octokit.authenticate({
@@ -108,7 +109,6 @@ async function test2() {
   for (i = 0; i < userLst.length; i++) {
       repoLists = await getRepoList(userLst[i]);
       if(repoLists) {
-        console.log('USER: ', userLst[i]);
 
           for(j = 0; j < repoLists.length; j++){
             repo_name = repoLists[j].name;
