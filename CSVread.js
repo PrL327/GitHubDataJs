@@ -1,5 +1,6 @@
 var csv = require('csv');
 var fs = require('fs');
+var jsonfile = require('jsonfile')
 
 var csv_obj = csv(); //used version 0.3.7
 
@@ -16,5 +17,7 @@ csv_obj.from.path('repos.csv').to.array(function (data) {
     }
     // console.log(repos_data);
     var repoJSON = JSON.stringify(repos_data);
-    fs.writeFile("repos.json", repoJSON, (error) => { console.log(repoJSON) });
+    jsonfile.writeFile("repos.json", repos_data, {spaces: 2, EOL: '\r\n'}, function(err) {
+        console.error(err)
+    })
 });
