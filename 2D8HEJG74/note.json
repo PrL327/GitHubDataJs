@@ -239,7 +239,7 @@
     {
       "text": "%bigquery.sql\r\nSELECT\r\n  name,\r\n  COUNT(*) AS occurences\r\nFROM\r\n  `bigquery-public-data.github_repos.languages` AS l,\r\n  UNNEST(l.LANGUAGE)\r\nGROUP BY\r\n  name\r\nORDER BY\r\n  occurences DESC\r\n  limit 15",
       "user": "anonymous",
-      "dateUpdated": "2018-03-24 19:10:01.534",
+      "dateUpdated": "2018-03-24 19:30:25.391",
       "config": {
         "colWidth": 12.0,
         "fontSize": 9.0,
