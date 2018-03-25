@@ -10,6 +10,7 @@
   "license": "ISC",
   "dependencies": {
     "@octokit/rest": "^15.2.5",
-    "csv": "^0.3.7"
+    "csv": "^0.3.7",
+    "jsonfile": "latest"
   }
 }
