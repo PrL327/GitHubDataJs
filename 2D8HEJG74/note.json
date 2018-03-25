@@ -11573,7 +11573,7 @@
     {
       "text": "%md\n## Acknowledgments\n[Github API (js)](https://github.com/octokit/rest.js)\n[csv (js)](https://www.npmjs.com/package/csv)\n[jsonfile (js)](https://www.npmjs.com/package/jsonfile)\n[BigQuery](https://bigquery.cloud.google.com)",
       "user": "anonymous",
-      "dateUpdated": "2018-03-25 10:29:00.656",
+      "dateUpdated": "2018-03-25 10:31:05.170",
       "config": {
         "colWidth": 12.0,
         "fontSize": 9.0,
@@ -11585,8 +11585,8 @@
           "completionKey": "TAB"
         },
         "editorMode": "ace/mode/markdown",
-        "editorHide": false,
-        "tableHide": true
+        "editorHide": true,
+        "tableHide": false
       },
       "settings": {
         "params": {},
@@ -11605,8 +11605,8 @@
       "jobName": "paragraph_1521931878832_287070975",
       "id": "20180324-185118_2089676901",
       "dateCreated": "2018-03-24 18:51:18.832",
-      "dateStarted": "2018-03-25 10:12:12.410",
-      "dateFinished": "2018-03-25 10:12:12.423",
+      "dateStarted": "2018-03-25 10:31:05.170",
+      "dateFinished": "2018-03-25 10:31:05.177",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
