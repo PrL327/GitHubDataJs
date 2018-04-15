@@ -8,26 +8,21 @@ my_repos <- gh(.token = "", "/repos/:owner/:repo/contributors", owner = repos[1,
 length(my_repos)
 #vapply(my_repos, "[[", "", "name")
 
-my_commits <- gh(.token = "a52c5f8f7fa691d198d8f66572326d96726dd269", "/repos/:owner/:repo/commits", owner = repos[1,1], repo = repos[1,2])
-
 getAuthor <- function(owner, repo)
 {
   tryCatch({
-    my_commits <- gh(.token = "a52c5f8f7fa691d198d8f66572326d96726dd269", "/repos/:owner/:repo/commits", owner = owner, repo = repo)
-    repos[start+i, 3] <<- length(my_commits)
-    
+    my_commits <- gh(.token = "", "/repos/:owner/:repo/commits", owner = owner, repo = repo)
+   
+    for(i in 1:length(my_commits))
+    {
+      repo_commits[nrow(repo_commits)+1,] <<- c(repo, my_commits[1][[1]][[2]][["author"]][["name"]], my_commits[1][[1]][[2]][["author"]][["date"]])
+    }
   },
   error=function(cond) {
-    return()
+    print(sprintf("repo or owner not found for %s/%s", owner, repo))
   })
-  if(is.null(my_commits)){
-  for(i in 1:length(my_commits))
-  {
-    repo_commits[nrow(repo_commits)+1,] <<- c(repo, my_commits[1][[1]][[2]][["author"]][["name"]], my_commits[1][[1]][[2]][["author"]][["date"]])
-  }
-  }
-#
 }
+
 editCommitCSV <- function(start= 1, num=1000, numRows = null)
 {
   if (is.null(rowNums)){
@@ -116,13 +111,16 @@ repo_commits$timestamp = character()
 repo_commits$repo = as.character(repo_commits$repo)
 repo_commits$author = as.character(repo_commits$author)
 repo_commits$timestamp = as.character(repo_commits$timestamp)
+Encoding(repo_commits$author) = "UTF_8"
 
 rows = function(tab) lapply(
   seq_len(nrow(tab)),
   function(i) unclass(tab[i,,drop=F])
 )
 
-for(a in rows(repos)){
+a = 2000
+for(a in rows(repos[(a+1):(a+2000),])){
   print(a$usernames)
   getAuthor(a$usernames, a$repos)
 }
+
