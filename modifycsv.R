@@ -10,16 +10,14 @@ length(my_repos)
 
 my_commits <- gh(.token = "", "/repos/:owner/:repo/commits", owner = repos[1,1], repo = repos[1,2])
 
-getAuthor <- function(start=1, num=1000, numRows= null)
+getAuthor <- function(owner, repo)
 {
-  my_commits <- gh(.token = "", "/repos/:owner/:repo/commits", owner = repos[1,1], repo = repos[1,2])
-  print(repos[1,2])
-  repo_string = repos[1,2]
+  my_commits <- gh(.token = "", "/repos/:owner/:repo/commits", owner = owner, repo = repo)
   for(i in 1:length(my_commits))
   {
-    repo_commits[nrow(repo_commits)+1,] <<- c(repo_string, my_commits[1][[1]][[2]][["author"]][["name"]], my_commits[1][[1]][[2]][["author"]][["date"]])
+    repo_commits[nrow(repo_commits)+1,] <<- c(repo, my_commits[1][[1]][[2]][["author"]][["name"]], my_commits[1][[1]][[2]][["author"]][["date"]])
   }
-
+  print(typeof(my_commits[1][[1]][[2]][["author"]][["name"]]))
 }
 editCommitCSV <- function(start= 1, num=1000, numRows = null)
 {
