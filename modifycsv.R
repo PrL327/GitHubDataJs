@@ -99,4 +99,11 @@ hist(repos$contributors[repos$contributors > 0 & repos$contributors < 20], 20,
      col = rainbow(20), xlab = "Number of contributors", main = "Frequency of number of contributors")
 
 repos = repos[repos$contributors > 0,]
-in
+
+repo_commits = data.frame()
+repo_commits$repo = character()
+repo_commits$author = character()
+repo_commits$timestamp = character()
+repo_commits$repo = as.character(repo_commits$repo)
+repo_commits$author = as.character(repo_commits$author)
+repo_commits$timestamp = as.character(repo_commits$timestamp)
