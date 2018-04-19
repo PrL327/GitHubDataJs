@@ -3,7 +3,7 @@
     {
       "text": "%md\n# 1. Describe project goals and why it is interesting \nWe plan to use this data to predict which languages are being used, what they’re being used for (commercial, fun, etc). The data behind Github is fascinating because it is one the most used version control software out there and allows the public to see the trend of languages throughout the years and see what type of projects people create, and how they collaborate with one another.",
       "user": "anonymous",
-      "dateUpdated": "2018-03-25 10:24:31.796",
+      "dateUpdated": "2018-04-19 12:25:08.126",
       "config": {
         "colWidth": 12.0,
         "fontSize": 12.0,
@@ -35,15 +35,15 @@
       "jobName": "paragraph_1521810620834_186615656",
       "id": "20180323-091020_783048043",
       "dateCreated": "2018-03-23 09:10:20.834",
-      "dateStarted": "2018-03-25 10:24:31.796",
-      "dateFinished": "2018-03-25 10:24:31.815",
+      "dateStarted": "2018-04-19 12:25:08.189",
+      "dateFinished": "2018-04-19 12:25:13.432",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
     {
       "text": "%md\n# 2. Describe data collection/source of data, data format, data preprocessing\nThis dataset gives us info on what languages are used, its files (including their contents) and their size along with info on commits. We will use a combination of the data from bigquery along with using Github’s official api using javascript. Bigquery’s data is listed as tables, while the api will give us info in the form of an API response as json file. With bigquery, we have to eliminate rows that have a date before the creation of github (which is about 0.04% (10 million) which is most likely an error from importing data to bigQuery) of the total rows. With the api, we eliminate some of the redundant information such as owner of repo (since unless you’re searching, you get the repo based off the username).\n\nOne of our data collection source was Octokit’s [rest.js](https://github.com/octokit/rest.js), a JavaScript based API scraper tool adopted by the GitHub team. From there we could access a large amount github data arranging from, user info, repository details, gists, issues, and pull requests from 24 million users.This is an example of a “query” using rest.js:\n```\n//This specific function gets all the info of JavaFXMusicLibrary repository from user PrL327\noctokit.repos.get({\n  owner: \u0027prl327\u0027,\n  repo: \u0027JavaFXMusicLibrary\u0027\n}).then(({data}) \u003d\u003e {\n  console.log(data);\n}); \n```\n Right now since we can only evaluate data that is public like public organizations and public repos, we had to put a safeguard in which we return 0, which in the end we filter out. We also have to worry about hitting the query limit for the api which is 1000 queries a hour. We actually combined the use of BigQuery and Rest.js in one example. We had a csv file which contained two columns for username and repository, with about 10,000 rows. to easily process that csv file through our query we needed to convert it to a JSON for easy parsing. For this we used csv a node library and it\u0027s resepective functions to do the conversion, it produce an object like such:\n ```\n {\n     \"User\": \"prl327\",\n     \"Repository\": \"JavaFXMusicLibrary\"\n }\n ```\n And so on for 10,000 more user/repo combinations.",
       "user": "anonymous",
-      "dateUpdated": "2018-03-25 10:16:28.144",
+      "dateUpdated": "2018-04-19 12:24:50.328",
       "config": {
         "colWidth": 12.0,
         "fontSize": 12.0,
@@ -55,8 +55,8 @@
           "completionKey": "TAB"
         },
         "editorMode": "ace/mode/markdown",
-        "editorHide": true,
-        "tableHide": false
+        "editorHide": false,
+        "tableHide": true
       },
       "settings": {
         "params": {},
@@ -83,7 +83,7 @@
     {
       "text": "%md\n# 3. Describe contents of data in detail (write code to analyse and visualize it) \nFor our first plot, we gathered data using the github api since bigquery doesn\u0027t have any tables with information on contributors. The next four visualizations are from bigquery using it\u0027s language table that gives us information on languages used and total bytes of each language for each repository.",
       "user": "anonymous",
-      "dateUpdated": "2018-03-25 10:28:17.404",
+      "dateUpdated": "2018-04-19 12:25:30.793",
       "config": {
         "colWidth": 12.0,
         "fontSize": 9.0,
@@ -95,8 +95,8 @@
           "completionKey": "TAB"
         },
         "editorMode": "ace/mode/markdown",
-        "editorHide": true,
-        "tableHide": false
+        "editorHide": false,
+        "tableHide": true
       },
       "settings": {
         "params": {},
@@ -279,7 +279,7 @@
     {
       "text": "%bigquery.sql\r\nSELECT\r\n  name,\r\n  COUNT(*) AS occurences\r\nFROM\r\n  `bigquery-public-data.github_repos.languages` AS l,\r\n  UNNEST(l.LANGUAGE)\r\nGROUP BY\r\n  name\r\nORDER BY\r\n  occurences DESC\r\n  limit 15",
       "user": "anonymous",
-      "dateUpdated": "2018-04-13 17:36:59.298",
+      "dateUpdated": "2018-04-19 12:24:16.089",
       "config": {
         "colWidth": 12.0,
         "fontSize": 9.0,
@@ -4038,7 +4038,7 @@
     {
       "text": "%bigquery.sql\nSELECT\n  name,\n  SUM(bytes) AS totalBytes\nFROM\n  `bigquery-public-data.github_repos.languages` AS l,\n  UNNEST(l.LANGUAGE)\nGROUP BY\n  name\nORDER BY\n  totalBytes DESC\nlimit 15",
       "user": "anonymous",
-      "dateUpdated": "2018-04-13 17:37:01.114",
+      "dateUpdated": "2018-04-19 12:24:17.215",
       "config": {
         "colWidth": 12.0,
         "fontSize": 9.0,
@@ -11533,7 +11533,7 @@
     {
       "text": "%md\n# 4. Describe possible applications of this data, Including your ideas for the next phase\nAn application for this data is seeing what type of programs use more storage than others allowing a system administrator to give certain users more storage based on their favorite language. One interesting application will be seeing which libraries are commonly used (also see what type of libraries are most commonly used like reading json/csv files, machine learning, etc.) and can go a step further and seeing what are the top 10 libraries for each language for each year. We will be using this data to predict which languages will be expected to be used the most in 2018 and 2019. Since we also get information like commits, we can use this data to see average commits, average time between commits, and see average lifetime of a repository. We are also able to see contents of every file in any public repository, so we can use the contents to teach a machine learning algorithm to tell the difference between python and javascript or between java and c++, etc.",
       "user": "anonymous",
-      "dateUpdated": "2018-03-25 10:22:57.012",
+      "dateUpdated": "2018-04-19 12:25:50.045",
       "config": {
         "colWidth": 12.0,
         "fontSize": 12.0,
@@ -11545,8 +11545,8 @@
           "completionKey": "TAB"
         },
         "editorMode": "ace/mode/markdown",
-        "editorHide": true,
-        "tableHide": false
+        "editorHide": false,
+        "tableHide": true
       },
       "settings": {
         "params": {},
@@ -11573,7 +11573,7 @@
     {
       "text": "%md\n## Acknowledgments\n[Github API (js)](https://github.com/octokit/rest.js)\n[csv (js)](https://www.npmjs.com/package/csv)\n[jsonfile (js)](https://www.npmjs.com/package/jsonfile)\n[BigQuery](https://bigquery.cloud.google.com)",
       "user": "anonymous",
-      "dateUpdated": "2018-03-25 10:31:05.170",
+      "dateUpdated": "2018-04-19 12:29:10.480",
       "config": {
         "colWidth": 12.0,
         "fontSize": 9.0,
@@ -11585,8 +11585,8 @@
           "completionKey": "TAB"
         },
         "editorMode": "ace/mode/markdown",
-        "editorHide": true,
-        "tableHide": false
+        "editorHide": false,
+        "tableHide": true
       },
       "settings": {
         "params": {},
