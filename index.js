@@ -8,7 +8,7 @@ octokit.authenticate({
     password: ''
 });
 
-// Compare: https://developer.github.com/v3/repos/#list-organization-repositories
+Compare: https://developer.github.com/v3/repos/#list-organization-repositories
 octokit.repos.get({
   owner: 'prl327',
   repo: 'JavaFXMusicLibrary'
@@ -16,6 +16,21 @@ octokit.repos.get({
   // console.log(data);
 });
 
+async function getStats()
+{
+    let moby_data =  await octokit.repos.getStatsContributors({
+        owner: 'moby', 
+        repo: 'moby'
+    });
+    console.log(moby_data);
+    json_data = JSON.stringify(moby_data, null, 4)
+    fs.writeFile('moby.json', json_data, (err) => {  
+        if (err) throw err;
+        console.log('Data written to file');
+    });
+}
+
+json_data = getStats()
 
 
 octokit.repos.getCommits({
