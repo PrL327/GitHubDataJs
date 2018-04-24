@@ -31,6 +31,8 @@ function extractData() {
     }
 
     fs.writeFile('organized.json', JSON.stringify(org_json, null, 4))
+
+    
 }
 
 extractData()

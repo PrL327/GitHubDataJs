@@ -1,0 +1,602 @@
+[
+    {
+        "user_name": "miminar",
+        "additions": 1493,
+        "deletions": 402,
+        "commits": 21
+    },
+    {
+        "user_name": "sallyom",
+        "additions": 479,
+        "deletions": 144,
+        "commits": 21
+    },
+    {
+        "user_name": "Mic92",
+        "additions": 2341,
+        "deletions": 451,
+        "commits": 21
+    },
+    {
+        "user_name": "monnand",
+        "additions": 434,
+        "deletions": 231,
+        "commits": 21
+    },
+    {
+        "user_name": "cespare",
+        "additions": 354,
+        "deletions": 269,
+        "commits": 21
+    },
+    {
+        "user_name": "arm64b",
+        "additions": 357,
+        "deletions": 957,
+        "commits": 22
+    },
+    {
+        "user_name": "dongluochen",
+        "additions": 9124,
+        "deletions": 4524,
+        "commits": 23
+    },
+    {
+        "user_name": "ibuildthecloud",
+        "additions": 699,
+        "deletions": 218,
+        "commits": 23
+    },
+    {
+        "user_name": "pnasrat",
+        "additions": 1524,
+        "deletions": 1297,
+        "commits": 23
+    },
+    {
+        "user_name": "mrunalp",
+        "additions": 2398,
+        "deletions": 603,
+        "commits": 24
+    },
+    {
+        "user_name": "lsm5",
+        "additions": 140,
+        "deletions": 117,
+        "commits": 24
+    },
+    {
+        "user_name": "fcrisciani",
+        "additions": 12514,
+        "deletions": 8597,
+        "commits": 25
+    },
+    {
+        "user_name": "chris-crone",
+        "additions": 971,
+        "deletions": 456,
+        "commits": 26
+    },
+    {
+        "user_name": "charleswhchan",
+        "additions": 319,
+        "deletions": 244,
+        "commits": 26
+    },
+    {
+        "user_name": "shishir-a412ed",
+        "additions": 1424,
+        "deletions": 673,
+        "commits": 27
+    },
+    {
+        "user_name": "ewindisch",
+        "additions": 975,
+        "deletions": 507,
+        "commits": 29
+    },
+    {
+        "user_name": "titanous",
+        "additions": 554,
+        "deletions": 411,
+        "commits": 29
+    },
+    {
+        "user_name": "jpoimboe",
+        "additions": 1657,
+        "deletions": 266,
+        "commits": 29
+    },
+    {
+        "user_name": "nishanttotla",
+        "additions": 6908,
+        "deletions": 5451,
+        "commits": 31
+    },
+    {
+        "user_name": "swernli",
+        "additions": 1543,
+        "deletions": 1212,
+        "commits": 31
+    },
+    {
+        "user_name": "ankushagarwal",
+        "additions": 857,
+        "deletions": 161,
+        "commits": 31
+    },
+    {
+        "user_name": "mistyhacks",
+        "additions": 7737,
+        "deletions": 3956,
+        "commits": 33
+    },
+    {
+        "user_name": "MHBauer",
+        "additions": 2125,
+        "deletions": 1484,
+        "commits": 34
+    },
+    {
+        "user_name": "vishh",
+        "additions": 2370,
+        "deletions": 911,
+        "commits": 34
+    },
+    {
+        "user_name": "ripcurld",
+        "additions": 2490,
+        "deletions": 655,
+        "commits": 35
+    },
+    {
+        "user_name": "philips",
+        "additions": 1169,
+        "deletions": 717,
+        "commits": 35
+    },
+    {
+        "user_name": "mrjana",
+        "additions": 30283,
+        "deletions": 18614,
+        "commits": 37
+    },
+    {
+        "user_name": "dqminh",
+        "additions": 1196,
+        "deletions": 298,
+        "commits": 38
+    },
+    {
+        "user_name": "YuPengZTE",
+        "additions": 161,
+        "deletions": 150,
+        "commits": 38
+    },
+    {
+        "user_name": "sunyuan3",
+        "additions": 505,
+        "deletions": 129,
+        "commits": 38
+    },
+    {
+        "user_name": "miaoyq",
+        "additions": 909,
+        "deletions": 551,
+        "commits": 39
+    },
+    {
+        "user_name": "sfsmithcha",
+        "additions": 6313,
+        "deletions": 3158,
+        "commits": 39
+    },
+    {
+        "user_name": "wenchma",
+        "additions": 2354,
+        "deletions": 2285,
+        "commits": 39
+    },
+    {
+        "user_name": "Mashimiao",
+        "additions": 1464,
+        "deletions": 698,
+        "commits": 41
+    },
+    {
+        "user_name": "brahmaroutu",
+        "additions": 1938,
+        "deletions": 2148,
+        "commits": 42
+    },
+    {
+        "user_name": "cyli",
+        "additions": 14490,
+        "deletions": 11595,
+        "commits": 43
+    },
+    {
+        "user_name": "ostezer",
+        "additions": 35026,
+        "deletions": 13818,
+        "commits": 43
+    },
+    {
+        "user_name": "bfirsh",
+        "additions": 25164,
+        "deletions": 37066,
+        "commits": 44
+    },
+    {
+        "user_name": "jstarks",
+        "additions": 19043,
+        "deletions": 6003,
+        "commits": 46
+    },
+    {
+        "user_name": "mzdaniel",
+        "additions": 3849,
+        "deletions": 2086,
+        "commits": 46
+    },
+    {
+        "user_name": "mountkin",
+        "additions": 1906,
+        "deletions": 1630,
+        "commits": 47
+    },
+    {
+        "user_name": "proppy",
+        "additions": 701,
+        "deletions": 303,
+        "commits": 49
+    },
+    {
+        "user_name": "samalba",
+        "additions": 908,
+        "deletions": 405,
+        "commits": 49
+    },
+    {
+        "user_name": "kencochrane",
+        "additions": 3192,
+        "deletions": 757,
+        "commits": 54
+    },
+    {
+        "user_name": "ehazlett",
+        "additions": 4282,
+        "deletions": 840,
+        "commits": 55
+    },
+    {
+        "user_name": "stevvooe",
+        "additions": 6407,
+        "deletions": 3683,
+        "commits": 58
+    },
+    {
+        "user_name": "jpetazzo",
+        "additions": 1650,
+        "deletions": 877,
+        "commits": 58
+    },
+    {
+        "user_name": "HuKeping",
+        "additions": 1983,
+        "deletions": 2569,
+        "commits": 59
+    },
+    {
+        "user_name": "cyphar",
+        "additions": 4380,
+        "deletions": 4213,
+        "commits": 60
+    },
+    {
+        "user_name": "jlhawn",
+        "additions": 9433,
+        "deletions": 2034,
+        "commits": 69
+    },
+    {
+        "user_name": "tophj-ibm",
+        "additions": 1535,
+        "deletions": 1241,
+        "commits": 73
+    },
+    {
+        "user_name": "dhrp",
+        "additions": 26330,
+        "deletions": 14992,
+        "commits": 74
+    },
+    {
+        "user_name": "kolyshkin",
+        "additions": 4739,
+        "deletions": 793,
+        "commits": 77
+    },
+    {
+        "user_name": "rhatdan",
+        "additions": 3450,
+        "deletions": 749,
+        "commits": 77
+    },
+    {
+        "user_name": "justincormack",
+        "additions": 5331,
+        "deletions": 3192,
+        "commits": 87
+    },
+    {
+        "user_name": "lixiaobing1",
+        "additions": 265,
+        "deletions": 413,
+        "commits": 89
+    },
+    {
+        "user_name": "aluzzardi",
+        "additions": 22264,
+        "deletions": 5321,
+        "commits": 89
+    },
+    {
+        "user_name": "yuexiao-wang",
+        "additions": 827,
+        "deletions": 535,
+        "commits": 90
+    },
+    {
+        "user_name": "jamtur01",
+        "additions": 24842,
+        "deletions": 24574,
+        "commits": 90
+    },
+    {
+        "user_name": "rhvgoyal",
+        "additions": 3556,
+        "deletions": 1145,
+        "commits": 95
+    },
+    {
+        "user_name": "ahmetb",
+        "additions": 2880,
+        "deletions": 1164,
+        "commits": 98
+    },
+    {
+        "user_name": "AkihiroSuda",
+        "additions": 43925,
+        "deletions": 10470,
+        "commits": 99
+    },
+    {
+        "user_name": "anusha-ragunathan",
+        "additions": 7859,
+        "deletions": 3966,
+        "commits": 100
+    },
+    {
+        "user_name": "darrenstahlmsft",
+        "additions": 7451,
+        "deletions": 6634,
+        "commits": 100
+    },
+    {
+        "user_name": "WeiZhang555",
+        "additions": 5313,
+        "deletions": 3395,
+        "commits": 104
+    },
+    {
+        "user_name": "aboch",
+        "additions": 37674,
+        "deletions": 11144,
+        "commits": 105
+    },
+    {
+        "user_name": "erikh",
+        "additions": 11864,
+        "deletions": 8126,
+        "commits": 107
+    },
+    {
+        "user_name": "estesp",
+        "additions": 5919,
+        "deletions": 1865,
+        "commits": 115
+    },
+    {
+        "user_name": "mlaventure",
+        "additions": 108017,
+        "deletions": 17442,
+        "commits": 118
+    },
+    {
+        "user_name": "mavenugo",
+        "additions": 67511,
+        "deletions": 12020,
+        "commits": 126
+    },
+    {
+        "user_name": "hqhq",
+        "additions": 5401,
+        "deletions": 2962,
+        "commits": 138
+    },
+    {
+        "user_name": "shin-",
+        "additions": 5324,
+        "deletions": 2362,
+        "commits": 143
+    },
+    {
+        "user_name": "vbatts",
+        "additions": 14560,
+        "deletions": 5559,
+        "commits": 167
+    },
+    {
+        "user_name": "dmcgowan",
+        "additions": 44066,
+        "deletions": 15939,
+        "commits": 173
+    },
+    {
+        "user_name": "coolljt0725",
+        "additions": 3761,
+        "deletions": 1531,
+        "commits": 183
+    },
+    {
+        "user_name": "allencloud",
+        "additions": 8185,
+        "deletions": 5476,
+        "commits": 188
+    },
+    {
+        "user_name": "sdurrheimer",
+        "additions": 3700,
+        "deletions": 1267,
+        "commits": 190
+    },
+    {
+        "user_name": "shykes",
+        "additions": 14680,
+        "deletions": 10351,
+        "commits": 195
+    },
+    {
+        "user_name": "duglin",
+        "additions": 14398,
+        "deletions": 6789,
+        "commits": 224
+    },
+    {
+        "user_name": "tiborvass",
+        "additions": 44001,
+        "deletions": 56195,
+        "commits": 247
+    },
+    {
+        "user_name": "aaronlehmann",
+        "additions": 74875,
+        "deletions": 46595,
+        "commits": 256
+    },
+    {
+        "user_name": "unclejack",
+        "additions": 11495,
+        "deletions": 5026,
+        "commits": 276
+    },
+    {
+        "user_name": "SvenDowideit",
+        "additions": 127686,
+        "deletions": 119803,
+        "commits": 285
+    },
+    {
+        "user_name": "alexlarsson",
+        "additions": 35857,
+        "deletions": 18030,
+        "commits": 294
+    },
+    {
+        "user_name": "tonistiigi",
+        "additions": 230663,
+        "deletions": 48485,
+        "commits": 300
+    },
+    {
+        "user_name": "runcom",
+        "additions": 17841,
+        "deletions": 19589,
+        "commits": 302
+    },
+    {
+        "user_name": "calavera",
+        "additions": 46646,
+        "deletions": 34222,
+        "commits": 348
+    },
+    {
+        "user_name": "albers",
+        "additions": 6347,
+        "deletions": 2972,
+        "commits": 356
+    },
+    {
+        "user_name": "vdemeester",
+        "additions": 61683,
+        "deletions": 55406,
+        "commits": 373
+    },
+    {
+        "user_name": "jessfraz",
+        "additions": 40840,
+        "deletions": 16375,
+        "commits": 373
+    },
+    {
+        "user_name": "yongtang",
+        "additions": 155328,
+        "deletions": 118137,
+        "commits": 377
+    },
+    {
+        "user_name": "dnephin",
+        "additions": 107718,
+        "deletions": 78742,
+        "commits": 420
+    },
+    {
+        "user_name": "tianon",
+        "additions": 26384,
+        "deletions": 137461,
+        "commits": 474
+    },
+    {
+        "user_name": "cpuguy83",
+        "additions": 59366,
+        "deletions": 62318,
+        "commits": 476
+    },
+    {
+        "user_name": "LK4D4",
+        "additions": 780860,
+        "deletions": 830315,
+        "commits": 484
+    },
+    {
+        "user_name": "thaJeztah",
+        "additions": 25518,
+        "deletions": 43320,
+        "commits": 565
+    },
+    {
+        "user_name": "jhowardmsft",
+        "additions": 213304,
+        "deletions": 27293,
+        "commits": 625
+    },
+    {
+        "user_name": "creack",
+        "additions": 33475,
+        "deletions": 21896,
+        "commits": 708
+    },
+    {
+        "user_name": "vieux",
+        "additions": 48126,
+        "deletions": 35854,
+        "commits": 870
+    },
+    {
+        "user_name": "crosbymichael",
+        "additions": 147344,
+        "deletions": 102991,
+        "commits": 914
+    }
+]
