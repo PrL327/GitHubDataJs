@@ -353,6 +353,18 @@ visualizations are from bigquery using it's language table that gives us
 information on languages used and total bytes of each language for each
 repository.
 
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}2}]:} repos \PY{o}{\PYZlt{}\PYZhy{}} read.csv\PY{p}{(}\PY{l+s}{\PYZdq{}}\PY{l+s}{repos.csv\PYZdq{}}\PY{p}{,} header \PY{o}{=} \PY{k+kc}{TRUE}\PY{p}{)}
+        hist\PY{p}{(}repos\PY{o}{\PYZdl{}}\PY{k+kp}{contributors}\PY{p}{[}repos\PY{o}{\PYZdl{}}contributors \PY{o}{\PYZgt{}} \PY{l+m}{0} \PY{o}{\PYZam{}} repos\PY{o}{\PYZdl{}}contributors \PY{o}{\PYZlt{}} \PY{l+m}{30}\PY{p}{]}\PY{p}{,} \PY{l+m}{10}\PY{p}{,}
+             col \PY{o}{=} rainbow\PY{p}{(}\PY{l+m}{20}\PY{p}{)}\PY{p}{,} xlab \PY{o}{=} \PY{l+s}{\PYZdq{}}\PY{l+s}{Number of contributors\PYZdq{}}\PY{p}{,} main \PY{o}{=} \PY{l+s}{\PYZdq{}}\PY{l+s}{Frequency of number of contributors\PYZbs{}n(for repositories with less than 30 contributors)\PYZdq{}}\PY{p}{)}
+\end{Verbatim}
+
+
+    \begin{center}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{output_4_0.png}
+    \end{center}
+    { \hspace*{\fill} \\}
+    
     \hypertarget{describe-possible-applications-of-this-data-including-your-ideas-for-the-next-phase}{%
 \section{4. Describe possible applications of this data, Including your
 ideas for the next
@@ -372,6 +384,24 @@ commits, and see average lifetime of a repository. We are also able to
 see contents of every file in any public repository, so we can use the
 contents to teach a machine learning algorithm to tell the difference
 between python and javascript or between java and c++, etc.
+
+    \hypertarget{machine-learning---language-interpreting}{%
+\section{Machine Learning - Language
+Interpreting}\label{machine-learning---language-interpreting}}
+
+    We are also able to see contents of every file in any public repository,
+so we can use the contents to teach a machine learning algorithm to tell
+the difference between python and javascript or between java and c++,
+etc. For this process we went through we gathered the data from the
+Github's dataset on Google where we looked at both their \texttt{files}
+table and \texttt{content} table. We had to \texttt{JOIN} both tables
+based on file ids so we could get filenames and content together. From
+there we decided for our machine learning algorithm we would use
+Decision Trees to train our machine in recognizing the 8 most popular
+langauges.
+
+    \hypertarget{conclusion}{%
+\section{Conclusion}\label{conclusion}}
 
     \hypertarget{acknowledgments}{%
 \subsection{Acknowledgments}\label{acknowledgments}}

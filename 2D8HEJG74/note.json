@@ -279,7 +279,7 @@
     {
       "text": "%bigquery.sql\r\nSELECT\r\n  name,\r\n  COUNT(*) AS occurences\r\nFROM\r\n  `bigquery-public-data.github_repos.languages` AS l,\r\n  UNNEST(l.LANGUAGE)\r\nGROUP BY\r\n  name\r\nORDER BY\r\n  occurences DESC\r\n  limit 15",
       "user": "anonymous",
-      "dateUpdated": "2018-04-19 12:24:16.089",
+      "dateUpdated": "2018-04-28 12:05:18.254",
       "config": {
         "colWidth": 12.0,
         "fontSize": 9.0,
@@ -4038,7 +4038,7 @@
     {
       "text": "%bigquery.sql\nSELECT\n  name,\n  SUM(bytes) AS totalBytes\nFROM\n  `bigquery-public-data.github_repos.languages` AS l,\n  UNNEST(l.LANGUAGE)\nGROUP BY\n  name\nORDER BY\n  totalBytes DESC\nlimit 15",
       "user": "anonymous",
-      "dateUpdated": "2018-04-19 12:24:17.215",
+      "dateUpdated": "2018-04-28 12:05:18.871",
       "config": {
         "colWidth": 12.0,
         "fontSize": 9.0,
@@ -8975,7 +8975,7 @@
     {
       "text": "%bigquery.sql\nSELECT\n  name,\n  SUM(bytes) AS totalBytes\nFROM\n  `bigquery-public-data.github_repos.languages` AS l,\n  UNNEST(l.LANGUAGE)\nGROUP BY\n  name\nORDER BY\n  totalBytes\nlimit 15",
       "user": "anonymous",
-      "dateUpdated": "2018-03-24 19:10:02.525",
+      "dateUpdated": "2018-04-28 12:49:44.819",
       "config": {
         "colWidth": 12.0,
         "fontSize": 9.0,
@@ -8983,7 +8983,7 @@
         "results": {
           "0": {
             "graph": {
-              "mode": "ultimate-column-chart",
+              "mode": "pieChart",
               "height": 300.0,
               "optionOpen": false,
               "setting": {
