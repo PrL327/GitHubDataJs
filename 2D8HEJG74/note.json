@@ -279,7 +279,7 @@
     {
       "text": "%bigquery.sql\r\nSELECT\r\n  name,\r\n  COUNT(*) AS occurences\r\nFROM\r\n  `bigquery-public-data.github_repos.languages` AS l,\r\n  UNNEST(l.LANGUAGE)\r\nGROUP BY\r\n  name\r\nORDER BY\r\n  occurences DESC\r\n  limit 15",
       "user": "anonymous",
-      "dateUpdated": "2018-04-28 12:05:18.254",
+      "dateUpdated": "2018-04-28 17:55:47.822",
       "config": {
         "colWidth": 12.0,
         "fontSize": 9.0,
@@ -359,7 +359,8 @@
                   "rotate": {
                     "degree": "-45"
                   },
-                  "xLabelStatus": "default"
+                  "xLabelStatus": "default",
+                  "stacked": false
                 },
                 "stackedAreaChart": {
                   "rotate": {
@@ -2101,6 +2102,12 @@
                       }
                     ]
                   }
+                },
+                "lineChart": {
+                  "rotate": {
+                    "degree": "-45"
+                  },
+                  "xLabelStatus": "default"
                 }
               },
               "commonSetting": {},
@@ -2195,7 +2202,7 @@
     {
       "text": "%bigquery.sql\nSELECT\n  name,\n  COUNT(*) AS occurences\nFROM\n  `bigquery-public-data.github_repos.languages` AS l,\n  UNNEST(l.LANGUAGE)\nGROUP BY\n  name\nORDER BY\n  occurences\n  limit 15",
       "user": "anonymous",
-      "dateUpdated": "2018-03-24 19:10:01.745",
+      "dateUpdated": "2018-04-28 14:27:42.540",
       "config": {
         "colWidth": 12.0,
         "fontSize": 9.0,
@@ -2203,7 +2210,7 @@
         "results": {
           "0": {
             "graph": {
-              "mode": "ultimate-column-chart",
+              "mode": "stackedAreaChart",
               "height": 300.0,
               "optionOpen": false,
               "setting": {
@@ -3959,9 +3966,43 @@
                       }
                     ]
                   }
+                },
+                "multiBarChart": {
+                  "rotate": {
+                    "degree": "-45"
+                  },
+                  "xLabelStatus": "default"
+                },
+                "lineChart": {
+                  "rotate": {
+                    "degree": "-45"
+                  },
+                  "xLabelStatus": "default"
+                },
+                "stackedAreaChart": {
+                  "rotate": {
+                    "degree": "-45"
+                  },
+                  "xLabelStatus": "default",
+                  "style": "stack"
                 }
               },
-              "commonSetting": {}
+              "commonSetting": {},
+              "keys": [
+                {
+                  "name": "name",
+                  "index": 0.0,
+                  "aggr": "sum"
+                }
+              ],
+              "groups": [],
+              "values": [
+                {
+                  "name": "occurences",
+                  "index": 1.0,
+                  "aggr": "sum"
+                }
+              ]
             },
             "helium": {}
           }
@@ -3978,11 +4019,11 @@
         "forms": {}
       },
       "results": {
-        "code": "SUCCESS",
+        "code": "ERROR",
         "msg": [
           {
-            "type": "TABLE",
-            "data": "name\toccurences\t\nRing\t1\t\nMarkdown\t1\t\nNetLinx+ERB\t3\t\nDataWeave\t4\t\nLFE\t4\t\nRUNOFF\t5\t\nOpal\t7\t\nBefunge\t7\t\nTI Program\t7\t\nLoomScript\t8\t\nOmgrofl\t8\t\nSolidity\t10\t\nRouge\t11\t\nGlyph\t11\t\nCharity\t11\t\n"
+            "type": "TEXT",
+            "data": "java.lang.NullPointerException\n\tat org.apache.zeppelin.bigquery.BigQueryInterpreter.run(BigQueryInterpreter.java:254)\n\tat org.apache.zeppelin.bigquery.BigQueryInterpreter.executeSql(BigQueryInterpreter.java:231)\n\tat org.apache.zeppelin.bigquery.BigQueryInterpreter.interpret(BigQueryInterpreter.java:281)\n\tat org.apache.zeppelin.interpreter.LazyOpenInterpreter.interpret(LazyOpenInterpreter.java:103)\n\tat org.apache.zeppelin.interpreter.remote.RemoteInterpreterServer$InterpretJob.jobRun(RemoteInterpreterServer.java:629)\n\tat org.apache.zeppelin.scheduler.Job.run(Job.java:183)\n\tat org.apache.zeppelin.scheduler.FIFOScheduler$1.run(FIFOScheduler.java:139)\n\tat java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)\n\tat java.util.concurrent.FutureTask.run(FutureTask.java:266)\n\tat java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.access$201(ScheduledThreadPoolExecutor.java:180)\n\tat java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:293)\n\tat java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)\n\tat java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)\n\tat java.lang.Thread.run(Thread.java:748)\n"
           }
         ]
       },
@@ -3990,15 +4031,15 @@
       "jobName": "paragraph_1521082148871_-2028982417",
       "id": "20180314-224908_1317000163",
       "dateCreated": "2018-03-14 22:49:08.871",
-      "dateStarted": "2018-03-24 18:47:39.611",
-      "dateFinished": "2018-03-24 18:47:40.451",
-      "status": "FINISHED",
+      "dateStarted": "2018-04-28 14:27:42.665",
+      "dateFinished": "2018-04-28 14:27:42.698",
+      "status": "ERROR",
       "progressUpdateIntervalMs": 500
     },
     {
       "text": "%md\n## 15 Languages using the most bytes",
       "user": "anonymous",
-      "dateUpdated": "2018-03-25 10:18:23.236",
+      "dateUpdated": "2018-04-28 17:04:40.392",
       "config": {
         "colWidth": 12.0,
         "fontSize": 9.0,
@@ -4010,8 +4051,8 @@
           "completionKey": "TAB"
         },
         "editorMode": "ace/mode/markdown",
-        "editorHide": true,
-        "tableHide": false
+        "editorHide": false,
+        "tableHide": true
       },
       "settings": {
         "params": {},
@@ -4038,7 +4079,7 @@
     {
       "text": "%bigquery.sql\nSELECT\n  name,\n  SUM(bytes) AS totalBytes\nFROM\n  `bigquery-public-data.github_repos.languages` AS l,\n  UNNEST(l.LANGUAGE)\nGROUP BY\n  name\nORDER BY\n  totalBytes DESC\nlimit 15",
       "user": "anonymous",
-      "dateUpdated": "2018-04-28 12:05:18.871",
+      "dateUpdated": "2018-04-28 18:01:18.604",
       "config": {
         "colWidth": 12.0,
         "fontSize": 9.0,
@@ -4046,7 +4087,7 @@
         "results": {
           "0": {
             "graph": {
-              "mode": "lineChart",
+              "mode": "stackedAreaChart",
               "height": 300.0,
               "optionOpen": false,
               "setting": {
@@ -4849,7 +4890,8 @@
                   "rotate": {
                     "degree": "-45"
                   },
-                  "xLabelStatus": "default"
+                  "xLabelStatus": "default",
+                  "style": "stack"
                 },
                 "ultimate-column-chart": {
                   "chartChanged": true,
