@@ -280,13 +280,15 @@
     
 
     
-    \section{Final Report: Programming Languages and
-GitHub}\label{final-report-programming-languages-and-github}
+    \hypertarget{final-report-programming-languages-and-github}{%
+\section{Final Report: Programming Languages and
+GitHub}\label{final-report-programming-languages-and-github}}
 
 By Daniel Fraser and Peter Laskai
 
-    \section{Describe project goals and why it is
-interesting}\label{describe-project-goals-and-why-it-is-interesting}
+    \hypertarget{describe-project-goals-and-why-it-is-interesting}{%
+\section{Describe project goals and why it is
+interesting}\label{describe-project-goals-and-why-it-is-interesting}}
 
 We plan to use this data to predict which languages are being used, what
 they're being used for (commercial, fun, etc). The data behind Github is
@@ -295,8 +297,9 @@ there and allows the public to see the trend of languages throughout the
 years and see what type of projects people create, and how they
 collaborate with one another.
 
-    \section{Describe data collection/source of data, data format, data
-preprocessing}\label{describe-data-collectionsource-of-data-data-format-data-preprocessing}
+    \hypertarget{describe-data-collectionsource-of-data-data-format-data-preprocessing}{%
+\section{Describe data collection/source of data, data format, data
+preprocessing}\label{describe-data-collectionsource-of-data-data-format-data-preprocessing}}
 
 This dataset gives us info on what languages are used, its files
 (including their contents) and their size along with info on commits. We
@@ -340,11 +343,13 @@ produce an object like such:
 \texttt{\{\ \ \ \ \ \ "User":\ "prl327",\ \ \ \ \ \ "Repository":\ "JavaFXMusicLibrary"\ \ \}}
 And so on for 10,000 more user/repo combinations.
 
-    \section{Describe contents of data in detail (write code to analyse and
+    \hypertarget{describe-contents-of-data-in-detail-write-code-to-analyse-and-visualize-it}{%
+\section{Describe contents of data in detail (write code to analyse and
 visualize
-it)}\label{describe-contents-of-data-in-detail-write-code-to-analyse-and-visualize-it}
+it)}\label{describe-contents-of-data-in-detail-write-code-to-analyse-and-visualize-it}}
 
-    \subsubsection{Why Github?}\label{why-github}
+    \hypertarget{why-github}{%
+\subsubsection{Why Github?}\label{why-github}}
 
 Githhub is a very active community with millions of user constantly
 collaborating and contributing to projects. We gathered contributer data
@@ -352,152 +357,24 @@ using the github api since bigquery doesn't have any tables with
 information on contributors. We were surpised to find that most of the
 projects hosted there on github are only worked by only one person.
 
-    \begin{Verbatim}[commandchars=\\\{\}]
-{\color{incolor}In [{\color{incolor}1}]:} repos \PY{o}{\PYZlt{}\PYZhy{}} read.csv\PY{p}{(}\PY{l+s}{\PYZdq{}}\PY{l+s}{repos.csv\PYZdq{}}\PY{p}{,} header \PY{o}{=} \PY{k+kc}{TRUE}\PY{p}{)}
-        hist\PY{p}{(}repos\PY{o}{\PYZdl{}}\PY{k+kp}{contributors}\PY{p}{[}repos\PY{o}{\PYZdl{}}contributors \PY{o}{\PYZgt{}} \PY{l+m}{0} \PY{o}{\PYZam{}} repos\PY{o}{\PYZdl{}}contributors \PY{o}{\PYZlt{}} \PY{l+m}{30}\PY{p}{]}\PY{p}{,} \PY{l+m}{10}\PY{p}{,}
-             col \PY{o}{=} rainbow\PY{p}{(}\PY{l+m}{20}\PY{p}{)}\PY{p}{,} xlab \PY{o}{=} \PY{l+s}{\PYZdq{}}\PY{l+s}{Number of contributors\PYZdq{}}\PY{p}{,} main \PY{o}{=} \PY{l+s}{\PYZdq{}}\PY{l+s}{Frequency of number of contributors\PYZbs{}n(for repositories with less than 30 contributors)\PYZdq{}}\PY{p}{)}
-\end{Verbatim}
+    \hypertarget{languages-used-the-most}{%
+\subsection{Languages Used the most}\label{languages-used-the-most}}
 
+    \hypertarget{languages-used-the-least}{%
+\subsection{Languages Used the Least}\label{languages-used-the-least}}
 
-    \begin{center}
-    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{output_5_0.png}
-    \end{center}
-    { \hspace*{\fill} \\}
-    
-    \subsection{Languages Used the most}\label{languages-used-the-most}
+    \hypertarget{languages-using-the-most-bytes}{%
+\subsection{15 Languages using the most
+bytes}\label{languages-using-the-most-bytes}}
 
-    \begin{Verbatim}[commandchars=\\\{\}]
-{\color{incolor}In [{\color{incolor}1}]:} import plotly as py
-        from plotly.graph\PYZus{}objs import \PY{o}{*}
-        import pandas
-        col \PY{o}{=} \PY{p}{[}\PY{l+s}{\PYZsq{}}\PY{l+s}{name\PYZsq{}}\PY{p}{,} \PY{l+s}{\PYZsq{}}\PY{l+s}{occurences\PYZsq{}}\PY{p}{,} \PY{l+s}{\PYZsq{}}\PY{l+s}{\PYZsq{}}\PY{p}{]}
-        csv\PYZus{}data \PY{o}{=} pandas.read\PYZus{}csv\PY{p}{(}\PY{l+s}{\PYZsq{}}\PY{l+s}{most\PYZus{}languages.csv\PYZsq{}}\PY{p}{,} names\PY{o}{=}\PY{k+kp}{col}\PY{p}{)}
-        lang \PY{o}{=} csv\PYZus{}data.name.tolist\PY{p}{(}\PY{p}{)}
-        occ \PY{o}{=} csv\PYZus{}data.occurences.tolist\PY{p}{(}\PY{p}{)}
-        lang.pop\PY{p}{(}\PY{l+m}{0}\PY{p}{)}
-        occ.pop\PY{p}{(}\PY{l+m}{0}\PY{p}{)}
-        x \PY{o}{=} lang
-        y \PY{o}{=} occ
-        
-        py.offline.init\PYZus{}notebook\PYZus{}mode\PY{p}{(}connected\PY{o}{=}True\PY{p}{)}
-        
-        py.offline.iplot\PY{p}{(}\PY{p}{\PYZob{}}
-            \PY{l+s}{\PYZdq{}}\PY{l+s}{data\PYZdq{}}\PY{o}{:} \PY{p}{[}Scatter\PY{p}{(}x\PY{o}{=}lang\PY{p}{,} y\PY{o}{=}occ\PY{p}{)}\PY{p}{]}\PY{p}{,}
-            \PY{l+s}{\PYZdq{}}\PY{l+s}{layout\PYZdq{}}\PY{o}{:} Layout\PY{p}{(}title\PY{o}{=}\PY{l+s}{\PYZdq{}}\PY{l+s}{Top 15 Languages\PYZdq{}}\PY{p}{)}
-        \PY{p}{\PYZcb{}}\PY{p}{)}
-\end{Verbatim}
+    \hypertarget{languages-that-use-the-least-amount-of-bytes}{%
+\subsection{15 Languages that use the Least Amount of
+Bytes}\label{languages-that-use-the-least-amount-of-bytes}}
 
-
-    
-    
-    
-    
-    \subsection{Languages Used the Least}\label{languages-used-the-least}
-
-    \begin{Verbatim}[commandchars=\\\{\}]
-{\color{incolor}In [{\color{incolor}2}]:} import plotly as py
-        from plotly.graph\PYZus{}objs import \PY{o}{*}
-        import pandas
-        col \PY{o}{=} \PY{p}{[}\PY{l+s}{\PYZsq{}}\PY{l+s}{name\PYZsq{}}\PY{p}{,} \PY{l+s}{\PYZsq{}}\PY{l+s}{occurences\PYZsq{}}\PY{p}{,} \PY{l+s}{\PYZsq{}}\PY{l+s}{\PYZsq{}}\PY{p}{]}
-        csv\PYZus{}data \PY{o}{=} pandas.read\PYZus{}csv\PY{p}{(}\PY{l+s}{\PYZsq{}}\PY{l+s}{least\PYZus{}languages.csv\PYZsq{}}\PY{p}{,} names\PY{o}{=}\PY{k+kp}{col}\PY{p}{)}
-        lang \PY{o}{=} csv\PYZus{}data.name.tolist\PY{p}{(}\PY{p}{)}
-        occ \PY{o}{=} csv\PYZus{}data.occurences.tolist\PY{p}{(}\PY{p}{)}
-        lang.pop\PY{p}{(}\PY{l+m}{0}\PY{p}{)}
-        occ.pop\PY{p}{(}\PY{l+m}{0}\PY{p}{)}
-        x \PY{o}{=} lang
-        y \PY{o}{=} occ
-        
-        py.offline.init\PYZus{}notebook\PYZus{}mode\PY{p}{(}connected\PY{o}{=}True\PY{p}{)}
-        
-        py.offline.iplot\PY{p}{(}\PY{p}{\PYZob{}}
-            \PY{l+s}{\PYZdq{}}\PY{l+s}{data\PYZdq{}}\PY{o}{:} \PY{p}{[}Scatter\PY{p}{(}x\PY{o}{=}lang\PY{p}{,} y\PY{o}{=}occ\PY{p}{)}\PY{p}{]}\PY{p}{,}
-            \PY{l+s}{\PYZdq{}}\PY{l+s}{layout\PYZdq{}}\PY{o}{:} Layout\PY{p}{(}title\PY{o}{=}\PY{l+s}{\PYZdq{}}\PY{l+s}{Least Used 15 Languages\PYZdq{}}\PY{p}{)}
-        \PY{p}{\PYZcb{}}\PY{p}{)}
-\end{Verbatim}
-
-
-    
-    
-    
-    
-    \subsection{15 Languages using the most
-bytes}\label{languages-using-the-most-bytes}
-
-    \begin{Verbatim}[commandchars=\\\{\}]
-{\color{incolor}In [{\color{incolor}3}]:} import plotly as py
-        from plotly.graph\PYZus{}objs import \PY{o}{*}
-        import pandas
-        py.offline.init\PYZus{}notebook\PYZus{}mode\PY{p}{(}connected\PY{o}{=}True\PY{p}{)}
-        
-        col \PY{o}{=} \PY{p}{[}\PY{l+s}{\PYZsq{}}\PY{l+s}{name\PYZsq{}}\PY{p}{,} \PY{l+s}{\PYZsq{}}\PY{l+s}{totalBytes\PYZsq{}}\PY{p}{,} \PY{l+s}{\PYZsq{}}\PY{l+s}{\PYZsq{}}\PY{p}{]}
-        csv\PYZus{}data \PY{o}{=} pandas.read\PYZus{}csv\PY{p}{(}\PY{l+s}{\PYZsq{}}\PY{l+s}{most\PYZus{}bytes.csv\PYZsq{}}\PY{p}{,} names\PY{o}{=}\PY{k+kp}{col}\PY{p}{)}
-        lang \PY{o}{=} csv\PYZus{}data.name.tolist\PY{p}{(}\PY{p}{)}
-        byte \PY{o}{=} csv\PYZus{}data.totalBytes.tolist\PY{p}{(}\PY{p}{)}
-        
-        
-        x \PY{o}{=} lang
-        y \PY{o}{=} byte
-        
-        trace1 \PY{o}{=} Scatter\PY{p}{(}
-            x\PY{o}{=}lang\PY{p}{,}
-            y\PY{o}{=}byte\PY{p}{,}
-            fill\PY{o}{=}\PY{l+s}{\PYZsq{}}\PY{l+s}{tozeroy\PYZsq{}}
-        \PY{p}{)}
-        
-        
-        labels \PY{o}{=} lang
-        values \PY{o}{=} byte
-        
-        
-        py.offline.iplot\PY{p}{(}\PY{p}{[}trace1\PY{p}{]}\PY{p}{)}
-\end{Verbatim}
-
-
-    
-    
-    
-    
-    \subsection{15 Languages that use the Least Amount of
-Bytes}\label{languages-that-use-the-least-amount-of-bytes}
-
-    \begin{Verbatim}[commandchars=\\\{\}]
-{\color{incolor}In [{\color{incolor}4}]:} import plotly as py
-        from plotly.graph\PYZus{}objs import \PY{o}{*}
-        import pandas
-        py.offline.init\PYZus{}notebook\PYZus{}mode\PY{p}{(}connected\PY{o}{=}True\PY{p}{)}
-        
-        col \PY{o}{=} \PY{p}{[}\PY{l+s}{\PYZsq{}}\PY{l+s}{name\PYZsq{}}\PY{p}{,} \PY{l+s}{\PYZsq{}}\PY{l+s}{totalBytes\PYZsq{}}\PY{p}{,} \PY{l+s}{\PYZsq{}}\PY{l+s}{\PYZsq{}}\PY{p}{]}
-        csv\PYZus{}data \PY{o}{=} pandas.read\PYZus{}csv\PY{p}{(}\PY{l+s}{\PYZsq{}}\PY{l+s}{least\PYZus{}bytes.csv\PYZsq{}}\PY{p}{,} names\PY{o}{=}\PY{k+kp}{col}\PY{p}{)}
-        lang \PY{o}{=} csv\PYZus{}data.name.tolist\PY{p}{(}\PY{p}{)}
-        lang.pop\PY{p}{(}\PY{l+m}{0}\PY{p}{)}
-        byte \PY{o}{=} csv\PYZus{}data.totalBytes.tolist\PY{p}{(}\PY{p}{)}
-        byte.pop\PY{p}{(}\PY{l+m}{0}\PY{p}{)}
-        
-        x \PY{o}{=} lang
-        y \PY{o}{=} byte
-        
-        trace \PY{o}{=} Scatter\PY{p}{(}
-            x\PY{o}{=}lang\PY{p}{,}
-            y\PY{o}{=}byte\PY{p}{,}
-            fill\PY{o}{=}\PY{l+s}{\PYZsq{}}\PY{l+s}{tozeroy\PYZsq{}}
-        \PY{p}{)}
-        
-        
-        labels \PY{o}{=} lang
-        values \PY{o}{=} byte
-        
-        
-        py.offline.iplot\PY{p}{(}\PY{p}{[}\PY{k+kp}{trace}\PY{p}{]}\PY{p}{)}
-\end{Verbatim}
-
-
-    
-    
-    
-    
-    \section{4. Describe possible applications of this data, Including your
+    \hypertarget{describe-possible-applications-of-this-data-including-your-ideas-for-the-next-phase}{%
+\section{4. Describe possible applications of this data, Including your
 ideas for the next
-phase}\label{describe-possible-applications-of-this-data-including-your-ideas-for-the-next-phase}
+phase}\label{describe-possible-applications-of-this-data-including-your-ideas-for-the-next-phase}}
 
 An application for this data is seeing what type of programs use more
 storage than others allowing a system administrator to give certain
@@ -514,8 +391,9 @@ see contents of every file in any public repository, so we can use the
 contents to teach a machine learning algorithm to tell the difference
 between python and javascript or between java and c++, etc.
 
-    \section{Machine Learning - Language
-Interpreting}\label{machine-learning---language-interpreting}
+    \hypertarget{machine-learning---language-interpreting}{%
+\section{Machine Learning - Language
+Interpreting}\label{machine-learning---language-interpreting}}
 
     With the amount of programs on github, we were able to train a model to
 determine what language a program is based on the top 8 programming
@@ -541,9 +419,11 @@ there we decided for our machine learning algorithm we would use
 Decision Trees to train our machine in recognizing the 8 most popular
 langauges.
 
-    \section{Conclusion}\label{conclusion}
+    \hypertarget{conclusion}{%
+\section{Conclusion}\label{conclusion}}
 
-    \subsection{Acknowledgments}\label{acknowledgments}
+    \hypertarget{acknowledgments}{%
+\subsection{Acknowledgments}\label{acknowledgments}}
 
 \begin{itemize}
 \tightlist
