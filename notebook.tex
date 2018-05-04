@@ -13,7 +13,7 @@
 \documentclass[11pt]{article}
 
     
-    
+    \author{Daniel Fraser, Peter Laskai}
     \usepackage[T1]{fontenc}
     % Nicer default font (+ math font) than Computer Modern for most use cases
     \usepackage{mathpazo}
@@ -65,7 +65,7 @@
     \usepackage[inline]{enumitem} % IRkernel/repr support (it uses the enumerate* environment)
     \usepackage[normalem]{ulem} % ulem is needed to support strikethroughs (\sout)
                                 % normalem makes italics be italics, not underlines
-    
+    \usepackage{float}
 
     
     
@@ -141,7 +141,8 @@
     \def\gt{>}
     \def\lt{<}
     % Document parameters
-    \title{Final Report}
+    \title{Final Report: Programming Languages and
+    	GitHub}
     
     
     
@@ -277,18 +278,10 @@
     
     \maketitle
     
-    
 
-    
-    \hypertarget{final-report-programming-languages-and-github}{%
-\section{Final Report: Programming Languages and
-GitHub}\label{final-report-programming-languages-and-github}}
 
-By Daniel Fraser and Peter Laskai
-
-    \hypertarget{describe-project-goals-and-why-it-is-interesting}{%
-\section{Describe project goals and why it is
-interesting}\label{describe-project-goals-and-why-it-is-interesting}}
+    \section{Describe project goals and why it is
+interesting}\label{describe-project-goals-and-why-it-is-interesting}
 
 We plan to use this data to predict which languages are being used, what
 they're being used for (commercial, fun, etc). The data behind Github is
@@ -297,9 +290,8 @@ there and allows the public to see the trend of languages throughout the
 years and see what type of projects people create, and how they
 collaborate with one another.
 
-    \hypertarget{describe-data-collectionsource-of-data-data-format-data-preprocessing}{%
-\section{Describe data collection/source of data, data format, data
-preprocessing}\label{describe-data-collectionsource-of-data-data-format-data-preprocessing}}
+    \section{Describe data collection/source of data, data format, data
+preprocessing}\label{describe-data-collectionsource-of-data-data-format-data-preprocessing}
 
 This dataset gives us info on what languages are used, its files
 (including their contents) and their size along with info on commits. We
@@ -343,13 +335,11 @@ produce an object like such:
 \texttt{\{\ \ \ \ \ \ "User":\ "prl327",\ \ \ \ \ \ "Repository":\ "JavaFXMusicLibrary"\ \ \}}
 And so on for 10,000 more user/repo combinations.
 
-    \hypertarget{describe-contents-of-data-in-detail-write-code-to-analyse-and-visualize-it}{%
-\section{Describe contents of data in detail (write code to analyse and
+    \section{Describe contents of data in detail (write code to analyse and
 visualize
-it)}\label{describe-contents-of-data-in-detail-write-code-to-analyse-and-visualize-it}}
+it)}\label{describe-contents-of-data-in-detail-write-code-to-analyse-and-visualize-it}
 
-    \hypertarget{why-github}{%
-\subsubsection{Why Github?}\label{why-github}}
+    \subsubsection{Why Github?}\label{why-github}
 
 Githhub is a very active community with millions of user constantly
 collaborating and contributing to projects. We gathered contributer data
@@ -360,8 +350,7 @@ projects hosted there on github are only worked by only one person.
     \begin{Verbatim}[commandchars=\\\{\}]
 {\color{incolor}In [{\color{incolor}1}]:} repos \PY{o}{\PYZlt{}\PYZhy{}} read.csv\PY{p}{(}\PY{l+s}{\PYZdq{}}\PY{l+s}{repos.csv\PYZdq{}}\PY{p}{,} header \PY{o}{=} \PY{k+kc}{TRUE}\PY{p}{)}
         hist\PY{p}{(}repos\PY{o}{\PYZdl{}}\PY{k+kp}{contributors}\PY{p}{[}repos\PY{o}{\PYZdl{}}contributors \PY{o}{\PYZgt{}} \PY{l+m}{0} \PY{o}{\PYZam{}} repos\PY{o}{\PYZdl{}}contributors \PY{o}{\PYZlt{}} \PY{l+m}{30}\PY{p}{]}\PY{p}{,} \PY{l+m}{10}\PY{p}{,}
-             col \PY{o}{=} rainbow\PY{p}{(}\PY{l+m}{20}\PY{p}{)}\PY{p}{,} xlab \PY{o}{=} \PY{l+s}{\PYZdq{}}\PY{l+s}{Number of contributors\PYZdq{}}\PY{p}{,} 
-             main \PY{o}{=} \PY{l+s}{\PYZdq{}}\PY{l+s}{Frequency of number of contributors\PYZbs{}n(for repositories with less than 30 contributors)\PYZdq{}}\PY{p}{)}
+             col \PY{o}{=} rainbow\PY{p}{(}\PY{l+m}{20}\PY{p}{)}\PY{p}{,} xlab \PY{o}{=} \PY{l+s}{\PYZdq{}}\PY{l+s}{Number of contributors\PYZdq{}}\PY{p}{,} main \PY{o}{=} \PY{l+s}{\PYZdq{}}\PY{l+s}{Frequency of number of contributors\PYZbs{}n(for repositories with less than 30 contributors)\PYZdq{}}\PY{p}{)}
 \end{Verbatim}
 
 
@@ -370,8 +359,7 @@ projects hosted there on github are only worked by only one person.
     \end{center}
     { \hspace*{\fill} \\}
     
-    \hypertarget{languages-used-the-most}{%
-\subsection{Languages Used the most}\label{languages-used-the-most}}
+    \subsection{Languages Used the most}\label{languages-used-the-most}
 
     We filtered out the \texttt{languages} table from bigquery's dataset to
 only show the top 15 languages by occurrences:
@@ -392,18 +380,11 @@ only show the top 15 languages by occurrences:
 \end{Highlighting}
 \end{Shaded}
 
-    \begin{Verbatim}[commandchars=\\\{\}]
-{\color{incolor}In [{\color{incolor}6}]:} from IPython.display import Image
-        Image\PY{p}{(}filename\PY{o}{=}\PY{l+s}{\PYZsq{}}\PY{l+s}{newplot3.png\PYZsq{}}\PY{p}{)}
-\end{Verbatim}
-
-\texttt{\color{outcolor}Out[{\color{outcolor}6}]:}
-    
-    \begin{center}
-    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{output_8_0.png}
-    \end{center}
-    { \hspace*{\fill} \\}
-    
+\begin{figure}[H]
+\centering
+\includegraphics{newplot3.png}
+\caption{}
+\end{figure}
 
     Unsuprisingly the biggest languages used in the world round up the top
 15 used languages in Github. JavaScript takes the top with 1.2 Million
@@ -411,52 +392,45 @@ Occurrences in our dataset. Javascript is also a heavily modified
 langauage with sub languages like JQuery, NodeJS, ReactJS, and
 AngularJS.
 
-    \hypertarget{languages-used-the-least}{%
-\subsection{Languages Used the Least}\label{languages-used-the-least}}
+    \subsection{Languages Used the Least}\label{languages-used-the-least}
 
     We filtered out the \texttt{languages} table from bigquery's dataset to
 only show the 15 languages with the lowest occurrences:
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\KeywordTok{SELECT}
-\NormalTok{  name,}
-  \FunctionTok{COUNT}\NormalTok{(*) }\KeywordTok{AS}\NormalTok{ occurences}
-\KeywordTok{FROM}
-\NormalTok{  `bigquery-public-data.github_repos.languages` }\KeywordTok{AS}\NormalTok{ l,}
-\NormalTok{  UNNEST(l.LANGUAGE)}
-\KeywordTok{GROUP} \KeywordTok{BY}
-\NormalTok{  name}
-\KeywordTok{ORDER} \KeywordTok{BY}
-\NormalTok{  occurences}
-  \KeywordTok{limit} \DecValTok{15}
+	\KeywordTok{SELECT}
+	\NormalTok{  name,}
+	\FunctionTok{COUNT}\NormalTok{(*) }\KeywordTok{AS}\NormalTok{ occurences}
+	\KeywordTok{FROM}
+	\NormalTok{  `bigquery-public-data.github_repos.languages` }\KeywordTok{AS}\NormalTok{ l,}
+	\NormalTok{  UNNEST(l.LANGUAGE)}
+	\KeywordTok{GROUP} \KeywordTok{BY}
+	\NormalTok{  name}
+	\KeywordTok{ORDER} \KeywordTok{BY}
+	\NormalTok{  occurences }
+	\KeywordTok{limit} \DecValTok{15}
 \end{Highlighting}
 \end{Shaded}
 
-    \begin{Verbatim}[commandchars=\\\{\}]
-{\color{incolor}In [{\color{incolor}9}]:} Image\PY{p}{(}filename\PY{o}{=}\PY{l+s}{\PYZsq{}}\PY{l+s}{newplot2.png\PYZsq{}}\PY{p}{)}
-\end{Verbatim}
 
-\texttt{\color{outcolor}Out[{\color{outcolor}9}]:}
-    
-    \begin{center}
-    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{output_12_0.png}
-    \end{center}
-    { \hspace*{\fill} \\}
-    
+\begin{figure}[H]
+\centering
+\includegraphics{newplot2.png}
+\caption{}
+\end{figure}
 
     Processing through the data produced some interesting results. First to
-note Markdown is noted as one of the least used but when visiting GitHub
+note Markdown is noted as one of the lead used but when visiting GitHub
 you see README.md in almost every repo. In this case the Dataset from
 GoogleBigquery does not count README files when referencing language
 data. Ring is a language we have actually never heard before. If you
 search GitHub you'll find only 18 repositories that use Ring. The
 lanuage is a mult-paradigmn language that can be used for apps on
-multiple OS's and with a GCC compiler.
+multiple OSes and with a GCC compiler.
 
-    \hypertarget{languages-using-the-most-bytes}{%
-\subsection{15 Languages using the most
-bytes}\label{languages-using-the-most-bytes}}
+    \subsection{15 Languages using the most
+bytes}\label{languages-using-the-most-bytes}
 
     For bytes we continued analyzed the dataset's \texttt{langauges} table
 this time getting the sum of bytes:
@@ -477,20 +451,12 @@ this time getting the sum of bytes:
 \end{Highlighting}
 \end{Shaded}
 
-    \begin{Verbatim}[commandchars=\\\{\}]
-{\color{incolor}In [{\color{incolor}8}]:} Image\PY{p}{(}filename\PY{o}{=}\PY{l+s}{\PYZsq{}}\PY{l+s}{newplot1.png\PYZsq{}}\PY{p}{)}
-\end{Verbatim}
-
-\texttt{\color{outcolor}Out[{\color{outcolor}8}]:}
-    
-    \begin{center}
-    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{output_16_0.png}
-    \end{center}
-    { \hspace*{\fill} \\}
-    
-
-    *QUICK NOTE: B stands for Billion not bytes, i.e 36.48B is 36.48 Billion
-Bytes thus 36GB
+\begin{figure}[H]
+\centering
+\includegraphics{newplot1.png}
+\caption{*QUICK NOTE: B stands for Billion not bytes, i.e 36.48B is
+36.48 Billion Bytes thus 36GB}
+\end{figure}
 
     Analyzing byte data from GitHub we see C dominate in the amount with 6.3
 TerraBytes of code hosted on the GitHub service. Looking over
@@ -508,9 +474,8 @@ langagues like Python, Java, HTML, and PHP in that list. CSS GitHub's
 second most popular language only has about 155 Gb of data, but it's a
 style sheet language mainly unlike the rest of the languages up there.
 
-    \hypertarget{languages-that-use-the-least-amount-of-bytes}{%
-\subsection{15 Languages that use the Least Amount of
-Bytes}\label{languages-that-use-the-least-amount-of-bytes}}
+    \subsection{15 Languages that use the Least Amount of
+Bytes}\label{languages-that-use-the-least-amount-of-bytes}
 
     We did the same here except looked at the least amount of bytes:
 
@@ -530,17 +495,11 @@ Bytes}\label{languages-that-use-the-least-amount-of-bytes}}
 \end{Highlighting}
 \end{Shaded}
 
-    \begin{Verbatim}[commandchars=\\\{\}]
-{\color{incolor}In [{\color{incolor}7}]:} Image\PY{p}{(}filename\PY{o}{=}\PY{l+s}{\PYZsq{}}\PY{l+s}{newplot.png\PYZsq{}}\PY{p}{)}
-\end{Verbatim}
-
-\texttt{\color{outcolor}Out[{\color{outcolor}7}]:}
-    
-    \begin{center}
-    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{output_21_0.png}
-    \end{center}
-    { \hspace*{\fill} \\}
-    
+\begin{figure}[H]
+\centering
+\includegraphics{newplot.png}
+\caption{}
+\end{figure}
 
     DataWeave has the least amount of bytes hosted on GitHub. We learned
 that Dataweave is a querying language that works with Mule another query
@@ -548,10 +507,10 @@ language with Java. One thing that was surprising is a querying language
 has least amount of bytes coded compared to DogeScript, a language
 developed based in JavaScript, and constantly used and updated.
 
-    \hypertarget{describe-possible-applications-of-this-data-including-your-ideas-for-the-next-phase}{%
-\section{Describe possible applications of this data, Including your
+
+    \section{Describe possible applications of this data, Including your
 ideas for the next
-phase}\label{describe-possible-applications-of-this-data-including-your-ideas-for-the-next-phase}}
+phase}\label{describe-possible-applications-of-this-data-including-your-ideas-for-the-next-phase}
 
 An application for this data is seeing what type of programs use more
 storage than others allowing a system administrator to give certain
@@ -568,9 +527,8 @@ see contents of every file in any public repository, so we can use the
 contents to teach a machine learning algorithm to tell the difference
 between python and javascript or between java and c++, etc.
 
-    \hypertarget{machine-learning---language-interpreting}{%
-\section{Machine Learning - Language
-Interpreting}\label{machine-learning---language-interpreting}}
+    \section{Machine Learning - Language
+Interpreting}\label{machine-learning---language-interpreting}
 
     We are also able to see contents of every file in any public repository,
 so we can use the contents to teach a machine learning algorithm to tell
@@ -608,8 +566,7 @@ learning model (most likely a neural network) to allow even a user who
 knows nothing about compilers to create a language based off examples of
 it's code. \includegraphics{Rplot.png}
 
-    \hypertarget{conclusion}{%
-\section{Conclusion}\label{conclusion}}
+    \section{Conclusion}\label{conclusion}
 
 After spending a semester with this data we've gained some interesting
 insights. In terms of programming languages, there are a lot. People
@@ -618,7 +575,7 @@ languages we've never even heard of before. The big languages are still
 the most popular in terms of usage but it's surprising for one to see C
 dominate in terms of size in GitHub's platform. In terms of machine
 learning, many languages share same features yet have small distinct
-features that make them different. For example many languages share
+features that make them them different. For example many languages share
 similar \texttt{For} loop structures, but have different \texttt{print}
 statement structures.
 
@@ -653,8 +610,7 @@ algorithm, especially one that could predict languages. We hope to take
 what we learned and maybe even continue this research and analysis
 outside of this Introduction Course.
 
-    \hypertarget{acknowledgments}{%
-\subsection{Acknowledgments}\label{acknowledgments}}
+    \subsection{Acknowledgments}\label{acknowledgments}
 
 \begin{itemize}
 \tightlist
